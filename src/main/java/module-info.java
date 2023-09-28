@@ -1,8 +1,8 @@
-module code.dictionary {
+module com.example.dictionary {
     requires javafx.controls;
     requires javafx.fxml;
 
 
-    opens code.dictionary to javafx.fxml;
-    exports code.dictionary;
+    opens com.example.dictionary to javafx.fxml;
+    exports com.example.dictionary;
 }
