@@ -3,6 +3,6 @@ module com.example.dictionary {
     requires javafx.fxml;
 
 
-    opens com.example.dictionary to javafx.fxml;
-    exports com.example.dictionary;
+    opens Code to javafx.fxml;
+    exports Code;
 }
