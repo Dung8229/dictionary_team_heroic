@@ -22,8 +22,7 @@ public class SearchPane implements Initializable {
     private static final String API_KEY = "d3bf64e482e14c818dcfb90f0f861ecd";
     private static final File voiceWAV = new File("src/main/resources/Media/voice.wav");
     private static final VoiceProvider tts = new VoiceProvider(API_KEY);
-    private VoiceParameters USpara;
-    private VoiceParameters UKpara;
+    private VoiceParameters para;
 
     @FXML
     private Button USbutton;
@@ -32,38 +31,27 @@ public class SearchPane implements Initializable {
     @FXML
     private TextField searchField;
     public void speakUSvoice() {
-        try {
-            USpara.setText(searchField.getText());
-
-            byte[] voice = tts.speech(USpara);
-
-            FileOutputStream fos = new FileOutputStream(voiceWAV);
-            fos.write(voice, 0, voice.length);
-            fos.flush();
-            fos.close();
-
-            Media voiceWAVmedia = new Media(voiceWAV.toURI().toString());
-            MediaPlayer mediaPlayer = new MediaPlayer(voiceWAVmedia);
-            mediaPlayer.play();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        para.setLanguage(Languages.English_UnitedStates);
+        speakVoice(searchField.getText());
     }
 
     public void speakUKvoice() {
+        para.setLanguage(Languages.English_GreatBritain);
+        speakVoice(searchField.getText());
+    }
+    
+    private void speakVoice(String word) {
         try {
-            UKpara.setText(searchField.getText());
+            para.setText(word);
 
-            byte[] voice = tts.speech(UKpara);
+            byte[] voice = tts.speech(para);
 
             FileOutputStream fos = new FileOutputStream(voiceWAV);
             fos.write(voice, 0, voice.length);
             fos.flush();
             fos.close();
 
-            Media voiceWAVmedia = new Media(voiceWAV.toURI().toString());
-            MediaPlayer mediaPlayer = new MediaPlayer(voiceWAVmedia);
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(voiceWAV.toURI().toString()));
             mediaPlayer.play();
 
         } catch (Exception e) {
@@ -73,18 +61,11 @@ public class SearchPane implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        USpara = new VoiceParameters("Welcome", Languages.English_UnitedStates);
-        USpara.setCodec(AudioCodec.WAV);
-        USpara.setFormat(AudioFormat.Format_44KHZ.AF_44khz_16bit_stereo);
-        USpara.setBase64(false);
-        USpara.setSSML(false);
-        USpara.setRate(0);
-
-        UKpara = new VoiceParameters("Welcome", Languages.English_GreatBritain);
-        UKpara.setCodec(AudioCodec.WAV);
-        UKpara.setFormat(AudioFormat.Format_44KHZ.AF_44khz_16bit_stereo);
-        UKpara.setBase64(false);
-        UKpara.setSSML(false);
-        UKpara.setRate(0);
+        para = new VoiceParameters("Welcome", Languages.English_UnitedStates);
+        para.setCodec(AudioCodec.WAV);
+        para.setFormat(AudioFormat.Format_44KHZ.AF_44khz_16bit_stereo);
+        para.setBase64(false);
+        para.setSSML(false);
+        para.setRate(0);
     }
 }
