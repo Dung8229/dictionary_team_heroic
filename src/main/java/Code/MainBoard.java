@@ -40,8 +40,8 @@ public class MainBoard implements Initializable {
         try {
             searchPane = FXMLLoader.load(MainBoard.class.getResource("SearchPane.fxml"));
             translatePane = FXMLLoader.load(MainBoard.class.getResource("TranslatePane.fxml"));
-        } catch (IOException e) {
-            System.out.println("IOException");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         setMainBoard(searchPane);
     }
