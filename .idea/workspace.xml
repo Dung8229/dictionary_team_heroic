@@ -5,18 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bf461ad-7446-47c5-8420-bb18bc10d736" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Code/MainBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Code/RunDictionary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Code/SearchPane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Code/TranslatePane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Code/MainBoard.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Code/SearchPane.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Code/TranslatePane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dictionary/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dictionary/SearchWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dictionary/Main.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Code/MainBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Code/MainBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Code/SearchPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Code/SearchPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Code/SearchPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Code/SearchPane.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +32,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -46,20 +51,38 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Downloads/App/JavaFX/openjfx-20.0.2_windows-x64_bin-sdk/javafx-sdk-20.0.2/lib&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\Media" />
+      <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\Code" />
       <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\com\example\dictionary" />
       <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Code" />
       <recent name="com.example.dictionary" />
       <recent name="" />
     </key>
   </component>
   <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Code.RunDictionary" />
+      <module name="Dictionary" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\Admin\Downloads\App\JavaFX\openjfx-20.0.2_windows-x64_bin-sdk\javafx-sdk-20.0.2\lib --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="group" />
       <method v="2">
@@ -84,5 +107,9 @@
       <updated>1695911992412</updated>
     </task>
     <servers />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
