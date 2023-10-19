@@ -1,4 +1,4 @@
-package Code;
+package Main;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -6,7 +6,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -38,8 +37,8 @@ public class MainBoard implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            searchPane = FXMLLoader.load(MainBoard.class.getResource("SearchPane.fxml"));
-            translatePane = FXMLLoader.load(MainBoard.class.getResource("TranslatePane.fxml"));
+            searchPane = FXMLLoader.load(MainBoard.class.getResource("/fxml/SearchPane.fxml"));
+            translatePane = FXMLLoader.load(MainBoard.class.getResource("/fxml/TranslatePane.fxml"));
         } catch (Exception e) {
             e.printStackTrace();
         }

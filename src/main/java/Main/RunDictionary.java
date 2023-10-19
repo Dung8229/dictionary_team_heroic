@@ -1,4 +1,4 @@
-package Code;
+package Main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +10,8 @@ import java.io.IOException;
 public class RunDictionary extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainBoard.class.getResource("MainBoard.fxml"));
+        System.out.println();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainBoard.class.getResource("/fxml/MainBoard.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.setTitle("Dictionary");
         stage.setScene(scene);

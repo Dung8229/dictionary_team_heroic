@@ -1,4 +1,4 @@
-package Code;
+package Main;
 
 public class TranslatePane {
 }
