@@ -1,6 +1,7 @@
 package Main;
 
 import General.DatabaseConnection;
+import General.Dictionary;
 import Task.TaskCreateAudioFile;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -30,7 +31,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.web.WebView;
 
-public class SearchPane implements Initializable {
+public class SearchPane extends Dictionary implements Initializable {
     private static final String API_KEY = "d3bf64e482e14c818dcfb90f0f861ecd";
     private static final File voiceUS_WAV = new File("src/main/resources/Media/Audio/VoiceUS.wav");
     private static final File voiceUK_WAV = new File("src/main/resources/Media/Audio/VoiceUK.wav");
@@ -87,18 +88,6 @@ public class SearchPane implements Initializable {
         }
     }
 
-    public void getWordDetail(String word) {
-        try {
-            ResultSet queryOutput = statement.executeQuery(GET_WORD_DETAIL_QUERY + "\"" + word + "\"");
-            while (queryOutput.next()) {
-                String detail = queryOutput.getString("detail");
-                webView.getEngine().loadContent(detail, "text/html");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public void speakUSvoice() {
         try {
             threadCreateAudioFile.join();
@@ -120,16 +109,8 @@ public class SearchPane implements Initializable {
     }
 
     public void updateWordList(String wordPattern) {
-        try {
-            Set<String> wordSet = new TreeSet<>();
-            ResultSet queryOutput = statement.executeQuery(GET_WORD_LIKE_PATTERN_QUERY + "\"" + wordPattern + "%\"");
-            while (queryOutput.next()) {
-                wordSet.add(queryOutput.getString("word"));
-            }
-            wordList.getItems().setAll(wordSet);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        setSearchListTemp(wordPattern);
+        wordList.setItems(searchListTemp);
     }
 
     @Override
@@ -149,14 +130,7 @@ public class SearchPane implements Initializable {
             throw new RuntimeException(e);
         }
 
-        try {
-            ResultSet queryOutput = statement.executeQuery(GET_WORD_QUERY);
-            while (queryOutput.next()) {
-                wordList.getItems().add(queryOutput.getString("word"));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        wordList.setItems(searchList);
 
         searchField.textProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -173,7 +147,7 @@ public class SearchPane implements Initializable {
                 String word = wordList.getSelectionModel().getSelectedItem();
                 threadCreateAudioFile = new Thread(new TaskCreateAudioFile(word));
                 try {
-                    getWordDetail(word);
+                    webView.getEngine().loadContent(getDetail(word), "text/html");
                     threadCreateAudioFile.start();
                 } catch (Exception e) {
                     e.printStackTrace();

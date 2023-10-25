@@ -1,25 +1,32 @@
 package General;
 
-public class Word implements Comparable {
-    enum WordType {
-        NOUN,
-        PRONOUN,
-        VERB,
-        ADJECTIVE,
-        ADVERB,
-        PREPOSITION,
-        CONJUNCTION,
-        INTERJECTION
-    }
+public class Word implements Comparable<Word> {
     String word;
-    WordType wordType;
-    String pronunciation;
+    String details;
+
+    public Word(String word, String details) {
+        this.word = word;
+        this.details = details;
+    }
+
+    public String getWord() {
+        return word;
+    }
+
+    public void setWord(String word) {
+        this.word = word;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
 
     @Override
-    public int compareTo(Object o) {
-        if (o instanceof Word other) {
-            return word.compareTo(other.word);
-        }
-        return -1;
+    public int compareTo(Word other) {
+        return word.compareTo(other.word);
     }
 }
