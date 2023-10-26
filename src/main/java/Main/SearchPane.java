@@ -84,7 +84,7 @@ public class SearchPane extends Dictionary implements Initializable {
             fos.close();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace();    
         }
     }
 
