@@ -1,6 +1,0 @@
-1-byte character set
-A A
-a
-A-D
-a.d.c
-1-byte character code
