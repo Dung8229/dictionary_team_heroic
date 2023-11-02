@@ -15,23 +15,43 @@ public class MainBoard implements Initializable {
     @FXML
     private Button translateButton;
     @FXML
+    private Button bookmarkButton;
+    @FXML
+    private Button historyButton;
+
+    @FXML
     private AnchorPane mainBoard;
     @FXML
     private AnchorPane searchPane;
     @FXML
     private AnchorPane translatePane;
+    @FXML
+    private AnchorPane bookmarkPane;
+    @FXML
+    private AnchorPane historyPane;
+
+    @FXML
+    private BookmarkController bookmarkController;
+    @FXML
+    private HistoryController historyController;
+
     public void setMainBoard(AnchorPane pane) {
         mainBoard.getChildren().setAll(pane);
     }
-    @FXML
+
     public void OpenSearchPane() {
-        System.out.println("Search Open");
         setMainBoard(searchPane);
     }
-    @FXML
     public void OpenTranslatePane() {
-        System.out.println("Translate Open");
         setMainBoard(translatePane);
+    }
+    public void OpenHistoryPane() {
+        setMainBoard(historyPane);
+        historyController.initHistoryList();
+    }
+    public void OpenBookmarkPane() {
+        setMainBoard(bookmarkPane);
+        bookmarkController.initBookmarkedList();
     }
 
     @Override
@@ -39,6 +59,20 @@ public class MainBoard implements Initializable {
         try {
             searchPane = FXMLLoader.load(MainBoard.class.getResource("/fxml/SearchPane.fxml"));
             translatePane = FXMLLoader.load(MainBoard.class.getResource("/fxml/TranslatePane.fxml"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            FXMLLoader loader = new FXMLLoader(MainBoard.class.getResource("/fxml/BookmarkPane.fxml"));
+            bookmarkPane = loader.load();
+            bookmarkController = loader.getController();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            FXMLLoader loader = new FXMLLoader(MainBoard.class.getResource("/fxml/HistoryPane.fxml"));
+            historyPane = loader.load();
+            historyController = loader.getController();
         } catch (Exception e) {
             e.printStackTrace();
         }

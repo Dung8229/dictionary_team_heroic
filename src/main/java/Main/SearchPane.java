@@ -9,22 +9,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
-import java.io.File;
-import java.io.FileOutputStream;
+import java.io.*;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-import java.util.Set;
-import java.util.TreeSet;
 
 import com.voicerss.tts.AudioCodec;
 import com.voicerss.tts.AudioFormat;
 import com.voicerss.tts.Languages;
 import com.voicerss.tts.VoiceParameters;
 import com.voicerss.tts.VoiceProvider;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.media.Media;
@@ -45,15 +42,15 @@ public class SearchPane extends Dictionary implements Initializable {
     @FXML
     private Button UKbutton;
     @FXML
+    private CheckBox bookmarkCheckBox;
+    @FXML
     private TextField searchField;
     @FXML
-    private ListView<String> wordList;
+    private ListView<String> listView;
     @FXML
     private WebView webView;
 
-    public Set<String> words = new TreeSet<>();
     public Thread threadCreateAudioFile;
-    public Thread threadGetDefinition;
     private static VoiceParameters para;
     private DatabaseConnection dbConnection;
     private Connection connection;
@@ -74,6 +71,7 @@ public class SearchPane extends Dictionary implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         try {
             para.setLanguage(Languages.English_GreatBritain);
             byte[] voice = tts.speech(para);
@@ -84,7 +82,7 @@ public class SearchPane extends Dictionary implements Initializable {
             fos.close();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace();    
         }
     }
 
@@ -108,9 +106,26 @@ public class SearchPane extends Dictionary implements Initializable {
         mediaPlayer.play();
     }
 
-    public void updateWordList(String wordPattern) {
-        setSearchListTemp(wordPattern);
-        wordList.setItems(searchListTemp);
+    public void bookmarkWord() {
+        String word = listView.getSelectionModel().getSelectedItem();
+        if (word != null) {
+            int index = dictionaryList.indexOf(word);
+            if (bookmarkCheckBox.isSelected() && isBookmarkedList.get(index) == false) {
+                isBookmarkedList.set(index, true);
+                bookmarkedList.add(0, word);
+            } else {
+                isBookmarkedList.set(index, false);
+                bookmarkedList.remove(word);
+            }
+        }
+    }
+
+    public void handleBookmarkCheckBoxSelected(String word) {
+        if (isBookmarkedList.get(dictionaryList.indexOf(word)) == false) {
+            bookmarkCheckBox.setSelected(false);
+        } else {
+            bookmarkCheckBox.setSelected(true);
+        }
     }
 
     @Override
@@ -130,25 +145,27 @@ public class SearchPane extends Dictionary implements Initializable {
             throw new RuntimeException(e);
         }
 
-        wordList.setItems(searchList);
+        listView.setItems(dictionaryList);
 
         searchField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String currentText) {
-                updateWordList(currentText);
+                updateListView(currentText, dictionaryList, listView);
             }
         });
 
-        wordList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+        listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 
             @Override
             public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
 
-                String word = wordList.getSelectionModel().getSelectedItem();
+                String word = listView.getSelectionModel().getSelectedItem();
                 threadCreateAudioFile = new Thread(new TaskCreateAudioFile(word));
                 try {
-                    webView.getEngine().loadContent(getDetail(word), "text/html");
                     threadCreateAudioFile.start();
+                    webView.getEngine().loadContent(getDetail(word), "text/html");
+                    historyList.add(0, word);
+                    handleBookmarkCheckBoxSelected(word);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
