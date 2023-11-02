@@ -1,0 +1,23 @@
+.button:hover {
+    -fx-border-color: #eb4034;
+}
+
+.button {
+    -fx-padding: 0;
+}
+
+.button:focus {
+    -fx-border-color: "red";
+}
+
+#app{
+    -fx-background: "white";
+}
+
+#app1{
+    -fx-background-color: #98FB98;
+}
+
+#button1 {
+    -fx-padding: 0;
+}

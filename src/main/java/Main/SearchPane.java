@@ -71,6 +71,7 @@ public class SearchPane extends Dictionary implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         try {
             para.setLanguage(Languages.English_GreatBritain);
             byte[] voice = tts.speech(para);
