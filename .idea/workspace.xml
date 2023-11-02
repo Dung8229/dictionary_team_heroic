@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bf461ad-7446-47c5-8420-bb18bc10d736" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Code/SearchPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Code/SearchPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/voice.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/voice.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/RunDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/RunDictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/SearchPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/SearchPane.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +37,9 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2W1tcR2fY2W5kcyXhXXxMFE2NFJ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -46,7 +50,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Back-end",
     "last_opened_file_path": "C:/Users/Admin/Downloads/App/JavaFX/openjfx-20.0.2_windows-x64_bin-sdk/javafx-sdk-20.0.2/lib",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
@@ -67,11 +71,11 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20" />
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="Code.RunDictionary" />
+      <option name="MAIN_CLASS_NAME" value="Main.RunDictionary" />
       <module name="Dictionary" />
-      <option name="VM_PARAMETERS" value="--module-path C:\Users\Admin\Downloads\App\JavaFX\openjfx-20.0.2_windows-x64_bin-sdk\javafx-sdk-20.0.2\lib --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\Admin\Downloads\App\JavaFX\openjfx-21.0.1_windows-x64_bin-sdk\javafx-sdk-21.0.1\lib --add-modules javafx.controls,javafx.fxml,javafx.media,javafx.web" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

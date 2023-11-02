@@ -15,7 +15,7 @@ public class RunDictionary extends Application {
         Dictionary.getSettingFromFile();
         FXMLLoader fxmlLoader = new FXMLLoader(MainBoard.class.getResource("/fxml/MainBoard.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-        Image icon = new Image(getClass().getResourceAsStream("/Media/Audio/Image/icon.jpg"));
+        Image icon = new Image(getClass().getResourceAsStream("/Media/Image/icon.jpg"));
         scene.getStylesheets().add(getClass().getResource("/Style/style.css").toExternalForm());
         stage.getIcons().add(icon);
         stage.setTitle("Dictionary");
