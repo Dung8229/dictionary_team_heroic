@@ -2,12 +2,10 @@ package Main;
 
 import General.DatabaseConnection;
 import General.Dictionary;
-import Task.TaskCreateAudioFile;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 
 import java.io.*;
 import java.net.URL;
@@ -20,27 +18,12 @@ import com.voicerss.tts.AudioCodec;
 import com.voicerss.tts.AudioFormat;
 import com.voicerss.tts.Languages;
 import com.voicerss.tts.VoiceParameters;
-import com.voicerss.tts.VoiceProvider;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.web.WebView;
 
 public class SearchPane extends Dictionary implements Initializable {
-    private static final String API_KEY = "d3bf64e482e14c818dcfb90f0f861ecd";
-    private static final File voiceUS_WAV = new File("src/main/resources/Media/Audio/VoiceUS.wav");
-    private static final File voiceUK_WAV = new File("src/main/resources/Media/Audio/VoiceUK.wav");
-    private static final VoiceProvider tts = new VoiceProvider(API_KEY);
-    private static final String GET_WORD_QUERY = "SELECT * FROM tbl_edict";
-    private static final String GET_WORD_DETAIL_QUERY = "SELECT * FROM tbl_edict WHERE word = ";
-    private static final String GET_WORD_LIKE_PATTERN_QUERY = "SELECT word FROM tbl_edict WHERE word LIKE ";
-
-    @FXML
-    private Button USbutton;
-    @FXML
-    private Button UKbutton;
     @FXML
     private CheckBox bookmarkCheckBox;
     @FXML
@@ -86,46 +69,28 @@ public class SearchPane extends Dictionary implements Initializable {
         }
     }
 
-    public void speakUSvoice() {
-        try {
-            threadCreateAudioFile.join();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        MediaPlayer mediaPlayer = new MediaPlayer(new Media(voiceUS_WAV.toURI().toString()));
-        mediaPlayer.play();
-    }
+//    public void speakUSvoice() {
+//        try {
+//            threadCreateAudioFile.join();
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//        MediaPlayer mediaPlayer = new MediaPlayer(new Media(voiceUS_WAV.toURI().toString()));
+//        mediaPlayer.play();
+//    }
 
-    public void speakUKvoice() {
-        try {
-            threadCreateAudioFile.join();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        MediaPlayer mediaPlayer = new MediaPlayer(new Media(voiceUK_WAV.toURI().toString()));
-        mediaPlayer.play();
-    }
+//    public void speakUKvoice() {
+//        try {
+//            threadCreateAudioFile.join();
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//        MediaPlayer mediaPlayer = new MediaPlayer(new Media(voiceUK_WAV.toURI().toString()));
+//        mediaPlayer.play();
+//    }
 
     public void bookmarkWord() {
-        String word = listView.getSelectionModel().getSelectedItem();
-        if (word != null) {
-            int index = dictionaryList.indexOf(word);
-            if (bookmarkCheckBox.isSelected() && isBookmarkedList.get(index) == false) {
-                isBookmarkedList.set(index, true);
-                bookmarkedList.add(0, word);
-            } else {
-                isBookmarkedList.set(index, false);
-                bookmarkedList.remove(word);
-            }
-        }
-    }
-
-    public void handleBookmarkCheckBoxSelected(String word) {
-        if (isBookmarkedList.get(dictionaryList.indexOf(word)) == false) {
-            bookmarkCheckBox.setSelected(false);
-        } else {
-            bookmarkCheckBox.setSelected(true);
-        }
+        bookmarkWord(listView, bookmarkCheckBox);
     }
 
     @Override
@@ -145,7 +110,7 @@ public class SearchPane extends Dictionary implements Initializable {
             throw new RuntimeException(e);
         }
 
-        listView.setItems(dictionaryList);
+        initWordList(dictionaryList, listView);
 
         searchField.textProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -160,12 +125,14 @@ public class SearchPane extends Dictionary implements Initializable {
             public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
 
                 String word = listView.getSelectionModel().getSelectedItem();
-                threadCreateAudioFile = new Thread(new TaskCreateAudioFile(word));
+                ThreadCreateAudioFileUS = new Thread(new TaskCreateAudioFileUS(word));
+                ThreadCreateAudioFileUK = new Thread(new TaskCreateAudioFileUK(word));
                 try {
-                    threadCreateAudioFile.start();
+                    ThreadCreateAudioFileUS.start();
+                    ThreadCreateAudioFileUK.start();
                     webView.getEngine().loadContent(getDetail(word), "text/html");
-                    historyList.add(0, word);
-                    handleBookmarkCheckBoxSelected(word);
+                    addHistoryList(word);
+                    handleBookmarkCheckBoxSelected(bookmarkCheckBox, word);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

@@ -6,16 +6,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane stylesheets="/Style/style.css" id="app" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.MainBoard">
+<AnchorPane id="app" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="737.0" stylesheets="/Style/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.MainBoard">
    <children>
-      <AnchorPane id="app1" style="-fx-background: #98FB98;" fx:id="mainBoard" layoutX="83.0" prefHeight="550.0" prefWidth="656.0" AnchorPane.bottomAnchor="1.3333333333333712" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="0.33333333333337123" AnchorPane.topAnchor="0.0" />
+      <AnchorPane id="app1" fx:id="mainBoard" layoutX="83.0" prefHeight="550.0" prefWidth="656.0" style="-fx-background: #98FB98;" AnchorPane.bottomAnchor="1.3333333333333712" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="0.33333333333337123" AnchorPane.topAnchor="0.0" />
       <VBox alignment="CENTER" layoutY="155.0" prefHeight="196.0" prefWidth="81.0" style="-fx-background-color: white;">
          <children>
             <Button graphicTextGap="0.0" mnemonicParsing="false" onAction="#OpenSearchPane" style="-fx-padding: 0;">
                <graphic>
                   <ImageView fitHeight="74.0" fitWidth="81.0" onMouseClicked="#OpenSearchPane" pickOnBounds="true" preserveRatio="true" styleClass="searchButton">
                      <image>
-                        <Image url="@../Media/Audio/Image/Search.jpg" />
+                        <Image url="@../Media/Image/Search.jpg" />
                      </image>
                   </ImageView>
                </graphic>
@@ -24,25 +24,26 @@
                <graphic>
                   <ImageView fitHeight="74.0" fitWidth="81.0" onMouseClicked="#OpenTranslatePane" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Media/Audio/Image/Translate.jpg" />
+                        <Image url="@../Media/Image/Translate.jpg" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-padding: 0;">
+            <Button mnemonicParsing="false" onAction="#OpenBookmarkPane" style="-fx-padding: 0;">
                <graphic>
                   <ImageView fitHeight="74.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Media/Audio/Image/wordMarked.jpg" />
+                        <Image url="@../Media/Image/wordMarked.jpg" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
+            <Button mnemonicParsing="false" onAction="#OpenHistoryPane" text="Tu da tra" />
             <Button mnemonicParsing="false" style="-fx-padding: 0;">
                <graphic>
                   <ImageView fitHeight="74.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Media/Audio/Image/Game.jpg" />
+                        <Image url="@../Media/Image/Game.jpg" />
                      </image>
                   </ImageView>
                </graphic>
@@ -53,7 +54,7 @@
          <graphic>
             <ImageView fitHeight="74.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Media/Audio/Image/menu.jpg" />
+                  <Image url="@../Media/Image/menu.jpg" />
                </image>
             </ImageView>
          </graphic>
