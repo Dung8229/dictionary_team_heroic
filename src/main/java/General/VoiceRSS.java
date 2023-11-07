@@ -18,10 +18,12 @@ public class VoiceRSS {
     protected static final String API_KEY = "d3bf64e482e14c818dcfb90f0f861ecd";
     protected static final File voiceUS_WAV = new File("src/main/resources/Media/Audio/VoiceUS.wav");
     protected static final File voiceUK_WAV = new File("src/main/resources/Media/Audio/VoiceUK.wav");
+    protected static final File voiceVN_WAV = new File("src/main/resources/Media/Audio/VoiceVN.wav");
     protected static final VoiceProvider tts = new VoiceProvider(API_KEY);
-    protected Thread ThreadCreateAudioFileUS;
-    protected Thread ThreadCreateAudioFileUK;
-    private VoiceParameters paraUS_Search, paraUK_Search;
+    protected Thread ThreadCreateAudioFileUS,
+                     ThreadCreateAudioFileUK,
+                     ThreadCreateAudioFileVN;
+    private VoiceParameters paraUS, paraUK, paraVN;
 
     public class TaskCreateAudioFileUS extends Task<Void> {
         private String word;
@@ -61,11 +63,29 @@ public class VoiceRSS {
         }
     }
 
+    public class TaskCreateAudioFileVN extends Task<Void> {
+        private String word;
+
+        public TaskCreateAudioFileVN(String word) {
+            this.word = word;
+        }
+
+        @Override
+        protected Void call() throws Exception {
+            try {
+                createAudioFileVN(word);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
     public void createAudioFileUS(String word) {
-        paraUS_Search.setText(word);
+        paraUS.setText(word);
 
         try {
-            byte[] voice = tts.speech(paraUS_Search);
+            byte[] voice = tts.speech(paraUS);
 
             FileOutputStream fos = new FileOutputStream(voiceUS_WAV);
             fos.write(voice, 0, voice.length);
@@ -78,12 +98,27 @@ public class VoiceRSS {
     }
 
     public void createAudioFileUK(String word) {
-        paraUK_Search.setText(word);
+        paraUK.setText(word);
 
         try {
-            byte[] voice = tts.speech(paraUK_Search);
+            byte[] voice = tts.speech(paraUK);
 
             FileOutputStream fos = new FileOutputStream(voiceUK_WAV);
+            fos.write(voice, 0, voice.length);
+            fos.flush();
+            fos.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void createAudioFileVN(String word) {
+        paraUK.setText(word);
+
+        try {
+            byte[] voice = tts.speech(paraVN);
+
+            FileOutputStream fos = new FileOutputStream(voiceVN_WAV);
             fos.write(voice, 0, voice.length);
             fos.flush();
             fos.close();
@@ -117,23 +152,44 @@ public class VoiceRSS {
         mediaPlayer.play();
     }
 
+    public void speakVNvoice() {
+        if (ThreadCreateAudioFileVN.isAlive()) {
+            try {
+                ThreadCreateAudioFileVN.join();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        MediaPlayer mediaPlayer = new MediaPlayer(new Media(voiceVN_WAV.toURI().toString()));
+        mediaPlayer.play();
+    }
+
     public VoiceRSS() {
-        if (paraUS_Search == null) {
-            paraUS_Search = new VoiceParameters("Easter egg found", Languages.English_UnitedStates);
-            paraUS_Search.setCodec(AudioCodec.WAV);
-            paraUS_Search.setFormat(AudioFormat.Format_44KHZ.AF_44khz_16bit_stereo);
-            paraUS_Search.setBase64(false);
-            paraUS_Search.setSSML(false);
-            paraUS_Search.setRate(0);
+        if (paraUS == null) {
+            paraUS = new VoiceParameters("Easter egg found", Languages.English_UnitedStates);
+            paraUS.setCodec(AudioCodec.WAV);
+            paraUS.setFormat(AudioFormat.Format_44KHZ.AF_44khz_16bit_stereo);
+            paraUS.setBase64(false);
+            paraUS.setSSML(false);
+            paraUS.setRate(0);
         }
 
-        if (paraUK_Search == null) {
-            paraUK_Search = new VoiceParameters("Easter egg found", Languages.English_GreatBritain);
-            paraUK_Search.setCodec(AudioCodec.WAV);
-            paraUK_Search.setFormat(AudioFormat.Format_44KHZ.AF_44khz_16bit_stereo);
-            paraUK_Search.setBase64(false);
-            paraUK_Search.setSSML(false);
-            paraUK_Search.setRate(0);
+        if (paraUK == null) {
+            paraUK = new VoiceParameters("Tìm thấy trứng phục sinh", Languages.English_GreatBritain);
+            paraUK.setCodec(AudioCodec.WAV);
+            paraUK.setFormat(AudioFormat.Format_44KHZ.AF_44khz_16bit_stereo);
+            paraUK.setBase64(false);
+            paraUK.setSSML(false);
+            paraUK.setRate(0);
+        }
+
+        if (paraVN == null) {
+            paraVN = new VoiceParameters("Easter egg found", Languages.Vietnamese);
+            paraVN.setCodec(AudioCodec.WAV);
+            paraVN.setFormat(AudioFormat.Format_44KHZ.AF_44khz_16bit_stereo);
+            paraVN.setBase64(false);
+            paraVN.setSSML(false);
+            paraVN.setRate(0);
         }
     }
 }

@@ -1,11 +1,11 @@
-1-byte character code
 2D configuration
+3D (three dimension) image
+1-byte character code
 abandon
 abaca
 a.s.a.p.
 a-ok
 a-bomb
-3D (three dimension) image
 1 to 1 relationship
 2-way device
 1-byte character string
