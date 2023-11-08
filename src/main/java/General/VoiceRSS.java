@@ -6,6 +6,7 @@ import com.voicerss.tts.*;
 import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
@@ -24,6 +25,7 @@ public class VoiceRSS {
                      ThreadCreateAudioFileUK,
                      ThreadCreateAudioFileVN;
     private VoiceParameters paraUS, paraUK, paraVN;
+    private double speakRate = 1;
 
     public class TaskCreateAudioFileUS extends Task<Void> {
         private String word;
@@ -113,7 +115,7 @@ public class VoiceRSS {
         }
     }
     public void createAudioFileVN(String word) {
-        paraUK.setText(word);
+        paraVN.setText(word);
 
         try {
             byte[] voice = tts.speech(paraVN);
@@ -137,6 +139,7 @@ public class VoiceRSS {
             }
         }
         MediaPlayer mediaPlayer = new MediaPlayer(new Media(voiceUS_WAV.toURI().toString()));
+        mediaPlayer.setRate(speakRate);
         mediaPlayer.play();
     }
 
@@ -149,6 +152,7 @@ public class VoiceRSS {
             }
         }
         MediaPlayer mediaPlayer = new MediaPlayer(new Media(voiceUK_WAV.toURI().toString()));
+        mediaPlayer.setRate(speakRate);
         mediaPlayer.play();
     }
 
@@ -164,6 +168,13 @@ public class VoiceRSS {
         mediaPlayer.play();
     }
 
+    protected void initSpeedBoxValue(ComboBox<Double> speedBox) {
+        for (double s = 0.25; s <= 2; s += 0.25) {
+            speedBox.getItems().add(s);
+        }
+        speedBox.setOnAction(e -> speakRate = speedBox.getValue());
+    }
+
     public VoiceRSS() {
         if (paraUS == null) {
             paraUS = new VoiceParameters("Easter egg found", Languages.English_UnitedStates);
@@ -175,7 +186,7 @@ public class VoiceRSS {
         }
 
         if (paraUK == null) {
-            paraUK = new VoiceParameters("Tìm thấy trứng phục sinh", Languages.English_GreatBritain);
+            paraUK = new VoiceParameters("Easter egg found", Languages.English_GreatBritain);
             paraUK.setCodec(AudioCodec.WAV);
             paraUK.setFormat(AudioFormat.Format_44KHZ.AF_44khz_16bit_stereo);
             paraUK.setBase64(false);
@@ -184,7 +195,7 @@ public class VoiceRSS {
         }
 
         if (paraVN == null) {
-            paraVN = new VoiceParameters("Easter egg found", Languages.Vietnamese);
+            paraVN = new VoiceParameters("Ong ong ong", Languages.Vietnamese);
             paraVN.setCodec(AudioCodec.WAV);
             paraVN.setFormat(AudioFormat.Format_44KHZ.AF_44khz_16bit_stereo);
             paraVN.setBase64(false);

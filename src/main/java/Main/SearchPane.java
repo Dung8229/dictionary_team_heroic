@@ -19,6 +19,7 @@ import com.voicerss.tts.AudioFormat;
 import com.voicerss.tts.Languages;
 import com.voicerss.tts.VoiceParameters;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.web.WebView;
@@ -32,62 +33,8 @@ public class SearchPane extends Dictionary implements Initializable {
     private ListView<String> listView;
     @FXML
     private WebView webView;
-
-    public Thread threadCreateAudioFile;
-    private static VoiceParameters para;
-    private DatabaseConnection dbConnection;
-    private Connection connection;
-    private Statement statement;
-
-    public static void createAudioFile(String word) {
-        para.setText(word);
-
-        try {
-            para.setLanguage(Languages.English_UnitedStates);
-            byte[] voice = tts.speech(para);
-
-            FileOutputStream fos = new FileOutputStream(voiceUS_WAV);
-            fos.write(voice, 0, voice.length);
-            fos.flush();
-            fos.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        try {
-            para.setLanguage(Languages.English_GreatBritain);
-            byte[] voice = tts.speech(para);
-
-            FileOutputStream fos = new FileOutputStream(voiceUK_WAV);
-            fos.write(voice, 0, voice.length);
-            fos.flush();
-            fos.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();    
-        }
-    }
-
-//    public void speakUSvoice() {
-//        try {
-//            threadCreateAudioFile.join();
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        MediaPlayer mediaPlayer = new MediaPlayer(new Media(voiceUS_WAV.toURI().toString()));
-//        mediaPlayer.play();
-//    }
-
-//    public void speakUKvoice() {
-//        try {
-//            threadCreateAudioFile.join();
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        MediaPlayer mediaPlayer = new MediaPlayer(new Media(voiceUK_WAV.toURI().toString()));
-//        mediaPlayer.play();
-//    }
+    @FXML
+    private ComboBox<Double> speedBox;
 
     public void bookmarkWord() {
         bookmarkWord(listView, bookmarkCheckBox);
@@ -95,22 +42,8 @@ public class SearchPane extends Dictionary implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        para = new VoiceParameters("Welcome", Languages.English_UnitedStates);
-        para.setCodec(AudioCodec.WAV);
-        para.setFormat(AudioFormat.Format_44KHZ.AF_44khz_16bit_stereo);
-        para.setBase64(false);
-        para.setSSML(false);
-        para.setRate(0);
-
-        dbConnection = new DatabaseConnection();
-        connection = dbConnection.getConnection();
-        try {
-            statement = connection.createStatement();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
         initWordList(dictionaryList, listView);
+        initSpeedBoxValue(speedBox);
 
         searchField.textProperty().addListener(new ChangeListener<String>() {
             @Override

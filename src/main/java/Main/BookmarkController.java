@@ -6,6 +6,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.web.WebView;
@@ -22,6 +23,8 @@ public class BookmarkController extends Dictionary implements Initializable {
     private WebView webView;
     @FXML
     private CheckBox bookmarkCheckBox;
+    @FXML
+    private ComboBox<Double> speedBox;
 
     public void bookmarkWord() {
         bookmarkWord(listView, bookmarkCheckBox);
@@ -30,6 +33,7 @@ public class BookmarkController extends Dictionary implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initWordList(bookmarkedList, listView);
+        initSpeedBoxValue(speedBox);
         searchField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String currentText) {
