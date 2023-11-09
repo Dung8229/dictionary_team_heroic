@@ -48,6 +48,7 @@
                   </ImageView>
                </graphic>
             </Button>
+            <Button mnemonicParsing="false" onAction="#OpenHistoryPane" text="Tu da tra" />
          </children>
       </VBox>
       <Button id="button1" mnemonicParsing="false" onAction="#OpenSearchPane" prefHeight="49.0" prefWidth="55.0" style="-fx-background-color: white;">
