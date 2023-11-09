@@ -11,15 +11,6 @@ import java.util.ResourceBundle;
 
 public class MainBoard implements Initializable {
     @FXML
-    private Button searchButton;
-    @FXML
-    private Button translateButton;
-    @FXML
-    private Button bookmarkButton;
-    @FXML
-    private Button historyButton;
-
-    @FXML
     private AnchorPane mainBoard;
     @FXML
     private AnchorPane searchPane;
@@ -47,11 +38,9 @@ public class MainBoard implements Initializable {
     }
     public void OpenHistoryPane() {
         setMainBoard(historyPane);
-        historyController.initHistoryList();
     }
     public void OpenBookmarkPane() {
         setMainBoard(bookmarkPane);
-        bookmarkController.initBookmarkedList();
     }
 
     @Override

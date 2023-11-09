@@ -2,25 +2,30 @@ package General;
 
 import Main.MainBoard;
 import Main.SearchPane;
-import com.voicerss.tts.Languages;
-import com.voicerss.tts.VoiceParameters;
-import com.voicerss.tts.VoiceProvider;
+import com.voicerss.tts.*;
 import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class VoiceRSS {
-    private static final String API_KEY = "d3bf64e482e14c818dcfb90f0f861ecd";
-    private static final File voiceUS_WAV = new File("src/main/resources/Media/Audio/VoiceUS.wav");
-    private static final File voiceUK_WAV = new File("src/main/resources/Media/Audio/VoiceUK.wav");
-    private static final VoiceProvider tts = new VoiceProvider(API_KEY);
-
-    private VoiceParameters paraUS, paraUK;
-    private SearchPane searchPane;
+    protected static final String API_KEY = "d3bf64e482e14c818dcfb90f0f861ecd";
+    protected static final File voiceUS_WAV = new File("src/main/resources/Media/Audio/VoiceUS.wav");
+    protected static final File voiceUK_WAV = new File("src/main/resources/Media/Audio/VoiceUK.wav");
+    protected static final File voiceVN_WAV = new File("src/main/resources/Media/Audio/VoiceVN.wav");
+    protected static final VoiceProvider tts = new VoiceProvider(API_KEY);
+    protected Thread ThreadCreateAudioFileUS,
+                     ThreadCreateAudioFileUK,
+                     ThreadCreateAudioFileVN;
+    private VoiceParameters paraUS, paraUK, paraVN;
+    private double speakRate = 1;
 
     public class TaskCreateAudioFileUS extends Task<Void> {
         private String word;
@@ -33,6 +38,7 @@ public class VoiceRSS {
         protected Void call() throws Exception {
             try {
                 createAudioFileUS(word);
+                System.out.println("US");
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -51,6 +57,25 @@ public class VoiceRSS {
         protected Void call() throws Exception {
             try {
                 createAudioFileUK(word);
+                System.out.println("UK");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
+    public class TaskCreateAudioFileVN extends Task<Void> {
+        private String word;
+
+        public TaskCreateAudioFileVN(String word) {
+            this.word = word;
+        }
+
+        @Override
+        protected Void call() throws Exception {
+            try {
+                createAudioFileVN(word);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -62,7 +87,6 @@ public class VoiceRSS {
         paraUS.setText(word);
 
         try {
-            paraUS.setLanguage(Languages.English_UnitedStates);
             byte[] voice = tts.speech(paraUS);
 
             FileOutputStream fos = new FileOutputStream(voiceUS_WAV);
@@ -76,8 +100,9 @@ public class VoiceRSS {
     }
 
     public void createAudioFileUK(String word) {
+        paraUK.setText(word);
+
         try {
-            paraUK.setLanguage(Languages.English_GreatBritain);
             byte[] voice = tts.speech(paraUK);
 
             FileOutputStream fos = new FileOutputStream(voiceUK_WAV);
@@ -89,32 +114,93 @@ public class VoiceRSS {
             e.printStackTrace();
         }
     }
+    public void createAudioFileVN(String word) {
+        paraVN.setText(word);
 
-//    public void speakUSvoice() {
-//        try {
-//            threadCreateAudioFile.join();
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        MediaPlayer mediaPlayer = new MediaPlayer(new Media(voiceUS_WAV.toURI().toString()));
-//        mediaPlayer.play();
-//    }
-//
-//    public void speakUKvoice() {
-//        try {
-//            threadCreateAudioFile.join();
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        MediaPlayer mediaPlayer = new MediaPlayer(new Media(voiceUK_WAV.toURI().toString()));
-//        mediaPlayer.play();
-//    }
-
-    public VoiceRSS() {
         try {
-            searchPane = FXMLLoader.load(MainBoard.class.getResource("/fxml/SearchPane.fxml"));
+            byte[] voice = tts.speech(paraVN);
+
+            FileOutputStream fos = new FileOutputStream(voiceVN_WAV);
+            fos.write(voice, 0, voice.length);
+            fos.flush();
+            fos.close();
+
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void speakUSvoice() {
+        if (ThreadCreateAudioFileUS.isAlive()) {
+            try {
+                ThreadCreateAudioFileUS.join();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        MediaPlayer mediaPlayer = new MediaPlayer(new Media(voiceUS_WAV.toURI().toString()));
+        mediaPlayer.setRate(speakRate);
+        mediaPlayer.play();
+    }
+
+    public void speakUKvoice() {
+        if (ThreadCreateAudioFileUK.isAlive()) {
+            try {
+                ThreadCreateAudioFileUK.join();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        MediaPlayer mediaPlayer = new MediaPlayer(new Media(voiceUK_WAV.toURI().toString()));
+        mediaPlayer.setRate(speakRate);
+        mediaPlayer.play();
+    }
+
+    public void speakVNvoice() {
+        if (ThreadCreateAudioFileVN.isAlive()) {
+            try {
+                ThreadCreateAudioFileVN.join();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        MediaPlayer mediaPlayer = new MediaPlayer(new Media(voiceVN_WAV.toURI().toString()));
+        mediaPlayer.play();
+    }
+
+    protected void initSpeedBoxValue(ComboBox<Double> speedBox) {
+        for (double s = 0.25; s <= 2; s += 0.25) {
+            speedBox.getItems().add(s);
+        }
+        speedBox.setOnAction(e -> speakRate = speedBox.getValue());
+    }
+
+    public VoiceRSS() {
+        if (paraUS == null) {
+            paraUS = new VoiceParameters("Easter egg found", Languages.English_UnitedStates);
+            paraUS.setCodec(AudioCodec.WAV);
+            paraUS.setFormat(AudioFormat.Format_44KHZ.AF_44khz_16bit_stereo);
+            paraUS.setBase64(false);
+            paraUS.setSSML(false);
+            paraUS.setRate(0);
+        }
+
+        if (paraUK == null) {
+            paraUK = new VoiceParameters("Easter egg found", Languages.English_GreatBritain);
+            paraUK.setCodec(AudioCodec.WAV);
+            paraUK.setFormat(AudioFormat.Format_44KHZ.AF_44khz_16bit_stereo);
+            paraUK.setBase64(false);
+            paraUK.setSSML(false);
+            paraUK.setRate(0);
+        }
+
+        if (paraVN == null) {
+            paraVN = new VoiceParameters("Ong ong ong", Languages.Vietnamese);
+            paraVN.setCodec(AudioCodec.WAV);
+            paraVN.setFormat(AudioFormat.Format_44KHZ.AF_44khz_16bit_stereo);
+            paraVN.setBase64(false);
+            paraVN.setSSML(false);
+            paraVN.setRate(0);
         }
     }
 }
