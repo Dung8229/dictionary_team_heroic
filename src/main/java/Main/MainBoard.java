@@ -12,18 +12,13 @@ import java.util.ResourceBundle;
 public class MainBoard implements Initializable {
     @FXML
     private AnchorPane mainBoard;
-    @FXML
     private AnchorPane searchPane;
-    @FXML
     private AnchorPane translatePane;
-    @FXML
     private AnchorPane bookmarkPane;
-    @FXML
     private AnchorPane historyPane;
+    private AnchorPane updatePane;
 
-    @FXML
     private BookmarkController bookmarkController;
-    @FXML
     private HistoryController historyController;
 
     public void setMainBoard(AnchorPane pane) {
@@ -42,12 +37,16 @@ public class MainBoard implements Initializable {
     public void OpenBookmarkPane() {
         setMainBoard(bookmarkPane);
     }
+    public void OpenUpdatePane() {
+        setMainBoard(updatePane);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             searchPane = FXMLLoader.load(MainBoard.class.getResource("/fxml/SearchPane.fxml"));
             translatePane = FXMLLoader.load(MainBoard.class.getResource("/fxml/TranslatePane.fxml"));
+            updatePane = FXMLLoader.load(MainBoard.class.getResource("/fxml/UpdatePane.fxml"));
         } catch (Exception e) {
             e.printStackTrace();
         }

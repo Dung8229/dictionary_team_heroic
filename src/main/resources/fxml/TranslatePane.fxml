@@ -24,11 +24,6 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="UKbutton" layoutX="213.0" layoutY="58.0" mnemonicParsing="false" onAction="#speakUKvoice" style="-fx-padding: 0;">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Button>
       <Button fx:id="VNbutton" layoutX="111.0" layoutY="264.0" mnemonicParsing="false" onAction="#speakVNvoice" prefHeight="50.0" prefWidth="50.0" style="-fx-padding: 0;">
          <font>
             <Font size="24.0" />

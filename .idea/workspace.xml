@@ -5,31 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="652c973b-5396-4879-bdaf-5be87776e0a5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/HistoryWords.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Main/UpdateController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/Details.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/Words.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/UpdatePane.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/General/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/General/Dictionary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/General/VoiceRSS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/General/VoiceRSS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/General/Word.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/BookmarkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/BookmarkController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/HistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/HistoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/MainBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/MainBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/RunDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/RunDictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/SearchPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/SearchPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Task/TaskCreateAudioFile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/Image/Game.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Image/Game.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/Image/Search.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Image/Search.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/Image/Translate.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Image/Translate.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/Image/loa.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Image/loa.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/Image/menu.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Image/menu.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/Image/wordMarked.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Image/wordMarked.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/SearchPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/SearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/TranslateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/TranslateController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUK.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUK.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUS.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUS.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceVN.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceVN.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Text file/BookmarkWords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/BookmarkWords.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Text file/HistoryWords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/HistoryWords.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/BookmarkPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/BookmarkPane.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/HistoryPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/HistoryPane.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/MainBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MainBoard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/SearchPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/SearchPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/TranslatePane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/TranslatePane.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,15 +37,20 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Back-end" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
   "associatedIndex": -1
 }]]></component>
   <component name="ProjectId" id="2XnwESEuBhtfKrVFmVc0rWfg5LW" />
@@ -58,18 +61,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Back-end-temp",
-    "last_opened_file_path": "C:/Users/Admin/Desktop/Project/Dictionary/src/main/resources/Media/Text file",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Back-end-temp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/Project/Dictionary/src/main/resources/Media/Text file&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\Media\Text file" />

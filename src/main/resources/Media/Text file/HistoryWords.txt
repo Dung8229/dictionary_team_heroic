@@ -1,18 +1,33 @@
-3D (three dimension) calculation
-2D module = two-dimensional module
-2D image
+oop
+a posteriori
+a.d.c
+A-D
+3D (three dimension)
+1 to many relationship
 2-way device
+8-bit character
+3D (three dimension) configuration
+2D module = two-dimensional module
 2D configuration
-3D (three dimension) image
+1-byte character set
+1 to 1 relationship
+oophore
 1-byte character code
+2D (two dimension)
+8-bit character set
+a
+A A
+8-bit personal computer
+1-byte character string
+2D image
+étude
+salesroom
+7-bit ASCII code set
+3D (three dimension) image
+3D (three dimension) calculation
 abandon
 abaca
 a.s.a.p.
 a-ok
 a-bomb
-1 to 1 relationship
-1-byte character string
-a
-8-bit character
-3D (three dimension)
 

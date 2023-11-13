@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane prefHeight="568.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.SearchPane">
+<AnchorPane prefHeight="568.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.SearchController">
    <children>
       <AnchorPane fx:id="wordListPane" minWidth="-Infinity" prefHeight="550.0" prefWidth="200.0" AnchorPane.bottomAnchor="52.66666666666663" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="602.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -25,8 +25,8 @@
             <Label layoutX="29.0" layoutY="78.0" text="US" />
             <Label layoutX="127.0" layoutY="78.0" text="UK" />
             <WebView fx:id="webView" layoutX="22.0" layoutY="148.0" prefHeight="414.0" prefWidth="531.0" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="148.0" />
-            <CheckBox fx:id="bookmarkCheckBox" layoutX="331.0" layoutY="78.0" mnemonicParsing="false" onAction="#bookmarkWord" text="Bookmark" />
-            <Button fx:id="USbutton" layoutX="57.0" layoutY="61.0" mnemonicParsing="false" onAction="#speakUSvoice" prefHeight="50.0" prefWidth="50.0" style="-fx-padding: 0;">
+            <CheckBox fx:id="bookmarkCheckBox" disable="true" layoutX="331.0" layoutY="78.0" mnemonicParsing="false" onAction="#bookmarkWord" text="Bookmark" />
+            <Button fx:id="USbutton" disable="true" layoutX="57.0" layoutY="61.0" mnemonicParsing="false" onAction="#speakUSvoice" prefHeight="50.0" prefWidth="50.0" style="-fx-padding: 0;">
                <font>
                   <Font size="24.0" />
                </font>
@@ -38,7 +38,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="UKbutton" layoutX="159.0" layoutY="62.0" mnemonicParsing="false" onAction="#speakUKvoice" style="-fx-padding: 0;">
+            <Button fx:id="UKbutton" disable="true" layoutX="159.0" layoutY="62.0" mnemonicParsing="false" onAction="#speakUKvoice" style="-fx-padding: 0;">
                <font>
                   <Font size="24.0" />
                </font>

@@ -48,7 +48,6 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" onAction="#OpenHistoryPane" text="Tu da tra" />
          </children>
       </VBox>
       <Button id="button1" mnemonicParsing="false" onAction="#OpenSearchPane" prefHeight="49.0" prefWidth="55.0" style="-fx-background-color: white;">
@@ -60,5 +59,6 @@
             </ImageView>
          </graphic>
       </Button>
+      <Button fx:id="updateButton" layoutY="492.0" mnemonicParsing="false" onAction="#OpenUpdatePane" prefHeight="57.0" prefWidth="81.0" text="Sua danh sach tu" textAlignment="CENTER" wrapText="true" />
    </children>
 </AnchorPane>
