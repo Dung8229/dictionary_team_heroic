@@ -1,19 +1,13 @@
 package General;
 
-import Main.MainBoard;
-import Main.SearchPane;
 import com.voicerss.tts.*;
 import javafx.concurrent.Task;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class VoiceRSS {
     protected static final String API_KEY = "d3bf64e482e14c818dcfb90f0f861ecd";

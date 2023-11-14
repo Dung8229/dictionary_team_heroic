@@ -1,0 +1,7 @@
+a posteriori
+2-way device
+8-bit character
+a
+1-byte character string
+2D configuration
+a.d.c

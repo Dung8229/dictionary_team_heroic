@@ -3,6 +3,7 @@ package Main;
 import General.Dictionary;
 import General.TranslateAPI;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
 import java.io.IOException;

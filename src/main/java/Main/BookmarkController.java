@@ -5,10 +5,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.web.WebView;
 
 import java.net.URL;
@@ -25,6 +22,10 @@ public class BookmarkController extends Dictionary implements Initializable {
     private CheckBox bookmarkCheckBox;
     @FXML
     private ComboBox<Double> speedBox;
+    @FXML
+    private Button USbutton;
+    @FXML
+    private Button UKbutton;
 
     public void bookmarkWord() {
         bookmarkWord(listView, bookmarkCheckBox);
@@ -58,6 +59,9 @@ public class BookmarkController extends Dictionary implements Initializable {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                bookmarkCheckBox.setDisable(false);
+                USbutton.setDisable(false);
+                UKbutton.setDisable(false);
 
             }
         });
