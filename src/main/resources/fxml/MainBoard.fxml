@@ -5,60 +5,106 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="app" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="737.0" stylesheets="/Style/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.MainBoard">
+<AnchorPane id="app" maxHeight="550.0" maxWidth="800.0" minHeight="550.0" minWidth="800.0" prefHeight="550.0" prefWidth="800.0" stylesheets="/Style/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.MainBoard">
    <children>
-      <AnchorPane id="app1" fx:id="mainBoard" layoutX="83.0" prefHeight="550.0" prefWidth="656.0" style="-fx-background: #98FB98;" AnchorPane.bottomAnchor="1.3333333333333712" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="0.33333333333337123" AnchorPane.topAnchor="0.0" />
-      <VBox alignment="CENTER" layoutY="155.0" prefHeight="196.0" prefWidth="81.0" style="-fx-background-color: white;">
+      <AnchorPane id="app1" fx:id="mainBoard" layoutX="55.333333333333336" prefHeight="550.0" prefWidth="800.0" style="-fx-background: #98FB98;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="blendPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane id="menuBar" fx:id="menuPane" layoutY="59.0" prefHeight="550.0" prefWidth="117.0" style="-fx-background-color: white;" stylesheets="@../Style/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button graphicTextGap="0.0" mnemonicParsing="false" onAction="#OpenSearchPane" style="-fx-padding: 0;">
-               <graphic>
-                  <ImageView fitHeight="74.0" fitWidth="81.0" onMouseClicked="#OpenSearchPane" pickOnBounds="true" preserveRatio="true" styleClass="searchButton">
-                     <image>
-                        <Image url="@../Media/Image/Search.jpg" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#OpenTranslatePane" style="-fx-padding: 0;">
-               <graphic>
-                  <ImageView fitHeight="74.0" fitWidth="81.0" onMouseClicked="#OpenTranslatePane" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Media/Image/Translate.jpg" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#OpenBookmarkPane" style="-fx-padding: 0;">
-               <graphic>
-                  <ImageView fitHeight="74.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Media/Image/wordMarked.jpg" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#OpenHistoryPane" text="Tu da tra" />
-            <Button mnemonicParsing="false" style="-fx-padding: 0;">
-               <graphic>
-                  <ImageView fitHeight="74.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Media/Image/Game.jpg" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#OpenHistoryPane" text="Tu da tra" />
+            <VBox layoutY="93.0" prefHeight="290.0" prefWidth="133.0" style="-fx-spacing: 10;" AnchorPane.leftAnchor="0.0">
+               <children>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#OpenSearchPane" prefHeight="50.0" prefWidth="254.0" style="-fx-background-color: white;" text="  Search" textAlignment="JUSTIFY">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#OpenHistoryPane" prefHeight="50.0" prefWidth="254.0" style="-fx-background-color: white;" text="  History" textAlignment="JUSTIFY">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#OpenTranslatePane" prefHeight="50.0" prefWidth="157.0" style="-fx-background-color: white;" text="  Translate" textAlignment="JUSTIFY">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="35.0" mnemonicParsing="false" onAction="#OpenBookmarkPane" prefHeight="50.0" prefWidth="131.0" style="-fx-background-color: white;" text="  Bookmark" textAlignment="JUSTIFY">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="61.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="216.0" style="-fx-background-color: white;" text="  Game" textAlignment="JUSTIFY">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
          </children>
-      </VBox>
-      <Button id="button1" mnemonicParsing="false" onAction="#OpenSearchPane" prefHeight="49.0" prefWidth="55.0" style="-fx-background-color: white;">
-         <graphic>
-            <ImageView fitHeight="74.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Media/Image/menu.jpg" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
+      </AnchorPane>
+      <AnchorPane fx:id="touchPane" prefHeight="550.0" prefWidth="50.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox layoutY="93.0" prefHeight="233.0" prefWidth="50.0" style="-fx-spacing: 10;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="93.0">
+               <children>
+                  <Button fx:id="searchButton" alignment="TOP_CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#OpenSearchPane" style="-fx-padding: 0; -fx-background-color: white;" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#OpenSearchPane" pickOnBounds="true" preserveRatio="true" styleClass="searchButton">
+                           <image>
+                              <Image url="@../Media/Image/Search.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-padding: 0;">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Media/Image/History.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="translateButton" alignment="CENTER" mnemonicParsing="false" onAction="#OpenTranslatePane" style="-fx-padding: 0; -fx-background-color: white;">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="64.0" onMouseClicked="#OpenTranslatePane" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Media/Image/Translate.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="savedListButton" alignment="CENTER" mnemonicParsing="false" onAction="#OpenHistoryPane" prefHeight="50.0" prefWidth="50.0" style="-fx-padding: 0; -fx-background-color: white;">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Media/Image/wordMarked.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-padding: 0;">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Media/Image/Game.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+            <Button fx:id="menu" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-padding: 0; -fx-background-color: white;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/Image/menu.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

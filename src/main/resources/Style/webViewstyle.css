@@ -1,0 +1,4 @@
+.web-view {
+    -fx-background-image: url('../Media/Image/vboxBackground.jpg');
+    -fx-background-size: cover;
+}

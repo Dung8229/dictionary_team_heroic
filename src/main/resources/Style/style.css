@@ -1,5 +1,5 @@
 .button:hover {
-    -fx-border-color: #eb4034;
+    -fx-border-color: white;
 }
 
 .button {
@@ -7,7 +7,7 @@
 }
 
 .button:focus {
-    -fx-border-color: "red";
+    -fx-border-color: "white";
 }
 
 #app{
@@ -20,4 +20,14 @@
 
 #button1 {
     -fx-padding: 0;
+}
+
+#anchor1 {
+    -fx-background-image: url('../Media/Image/bgr1.jpg');
+    -fx-background-size: cover;
+}
+
+#menuBar {
+    -fx-background-image: url('../Media/Image/menuBar.jpg');
+    -fx-background-size: cover;
 }
