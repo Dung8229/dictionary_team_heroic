@@ -9,6 +9,11 @@ import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 public class Dictionary extends VoiceRSS {
     protected static ObservableList<String> dictionaryList = FXCollections.observableArrayList();
     protected static ObservableList<String> detailList = FXCollections.observableArrayList();
@@ -18,7 +23,7 @@ public class Dictionary extends VoiceRSS {
 
     public String getDetail(String word) {
         int idx = dictionaryList.indexOf(word);
-        if (idx >= 0) return detailList.get(idx);
+        if (idx >= 0) return formatHtml(detailList.get(idx));
         throw new RuntimeException();
     }
 
@@ -132,6 +137,19 @@ public class Dictionary extends VoiceRSS {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static String formatHtml(String inputHtml) {
+        String formattedHtml = inputHtml.replaceAll("@(.*?)<br />", "<h1 style=\"color: red;\">$1</h1>")
+                .replaceAll("\\*(.*?)<br />", "<h2 style=\"color: blue;\">$1</h2>")
+                .replaceAll("- (.*?)<br />", "<p style=\"color: black;\">$1</p>")
+                .replaceAll("=([^=]*?)<br />", "<p style=\"color: purple;\">$1</p>")
+                .replaceAll("\\+", ":")
+                .replaceAll("<br />", "<br /><br />")
+                .replaceAll("<Q>", "")
+                .replaceAll("</Q>", "");
+
+        return formattedHtml;
     }
 
     public Dictionary() {

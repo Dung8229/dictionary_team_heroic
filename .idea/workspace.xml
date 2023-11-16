@@ -5,29 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="652c973b-5396-4879-bdaf-5be87776e0a5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main/UpdateController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/Details.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/Words.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/UpdatePane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/General/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/General/Dictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/General/VoiceRSS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/General/VoiceRSS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/BookmarkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/BookmarkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/HistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/HistoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/MainBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/MainBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/SearchPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/SearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/General/TranslateAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/General/TranslateAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/SearchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/TranslateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/TranslateController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUK.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUK.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUS.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUS.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceVN.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceVN.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Text file/BookmarkWords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/BookmarkWords.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Text file/HistoryWords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/HistoryWords.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/BookmarkPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/BookmarkPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/HistoryPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/HistoryPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/MainBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MainBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/SearchPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/SearchPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/TranslatePane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/TranslatePane.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,9 +39,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": -1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: -1
+}</component>
   <component name="ProjectId" id="2XnwESEuBhtfKrVFmVc0rWfg5LW" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
