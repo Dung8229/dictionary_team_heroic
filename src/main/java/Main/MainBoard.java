@@ -1,10 +1,13 @@
 package Main;
 
+import javafx.animation.FadeTransition;
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,14 +15,22 @@ import java.util.ResourceBundle;
 public class MainBoard implements Initializable {
     @FXML
     private AnchorPane mainBoard;
+    @FXML
     private AnchorPane searchPane;
+    @FXML
     private AnchorPane translatePane;
+    @FXML
     private AnchorPane bookmarkPane;
+    @FXML
     private AnchorPane historyPane;
+    @FXML
     private AnchorPane updatePane;
 
-    private BookmarkController bookmarkController;
-    private HistoryController historyController;
+    @FXML
+    private AnchorPane menuPane, blendPane, touchPane;
+
+    @FXML
+    private Button menu, searchButton, translateButton, savedListButton;
 
     public void setMainBoard(AnchorPane pane) {
         mainBoard.getChildren().setAll(pane);
@@ -53,17 +64,87 @@ public class MainBoard implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(MainBoard.class.getResource("/fxml/BookmarkPane.fxml"));
             bookmarkPane = loader.load();
-            bookmarkController = loader.getController();
         } catch (Exception e) {
             e.printStackTrace();
         }
         try {
             FXMLLoader loader = new FXMLLoader(MainBoard.class.getResource("/fxml/HistoryPane.fxml"));
             historyPane = loader.load();
-            historyController = loader.getController();
         } catch (Exception e) {
             e.printStackTrace();
         }
         setMainBoard(searchPane);
+
+        blendPane.setVisible(false);
+
+        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(0.5), blendPane);
+        fadeTransition.setFromValue(1);
+        fadeTransition.setToValue(0);
+        fadeTransition.play();
+
+        TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.5), menuPane);
+        translateTransition.setByX(-300);
+        translateTransition.play();
+
+        final boolean[] check = {true};
+        menu.setOnMouseClicked(event -> {
+            if (check[0]) {
+                blendPane.setVisible(true);
+                FadeTransition fadeTransition1 = new FadeTransition(Duration.seconds(0.5), blendPane);
+                fadeTransition1.setFromValue(0);
+                fadeTransition1.setToValue(0.15);
+                fadeTransition1.play();
+
+                TranslateTransition translateTransition1 = new TranslateTransition(Duration.seconds(0.5), menuPane);
+                translateTransition1.setByX(+300);
+                translateTransition1.play();
+                check[0] = false;
+            } else {
+                FadeTransition fadeTransition1 = new FadeTransition(Duration.seconds(0.5), blendPane);
+                fadeTransition1.setFromValue(0.15);
+                fadeTransition1.setToValue(0);
+                fadeTransition1.play();
+
+                fadeTransition1.setOnFinished(event1 -> {
+                    blendPane.setVisible(false);
+                });
+
+                TranslateTransition translateTransition1 = new TranslateTransition(Duration.seconds(0.5), menuPane);
+                translateTransition1.setByX(-300);
+                translateTransition1.play();
+                check[0] = true;
+            }
+        });
+
+        blendPane.setOnMouseClicked(event -> {
+            FadeTransition fadeTransition1 = new FadeTransition(Duration.seconds(0.5), blendPane);
+            fadeTransition1.setFromValue(0.15);
+            fadeTransition1.setToValue(0);
+            fadeTransition1.play();
+
+            fadeTransition1.setOnFinished(event1 -> {
+                blendPane.setVisible(false);
+            });
+
+            TranslateTransition translateTransition1 = new TranslateTransition(Duration.seconds(0.5), menuPane);
+            translateTransition1.setByX(-300);
+            translateTransition1.play();
+            check[0] = true;
+        });
+
+        touchPane.setOnMouseEntered(event -> {
+            if (check[0] && !blendPane.isVisible()) {
+                blendPane.setVisible(true);
+                FadeTransition fadeTransition1 = new FadeTransition(Duration.seconds(0.5), blendPane);
+                fadeTransition1.setFromValue(0);
+                fadeTransition1.setToValue(0.15);
+                fadeTransition1.play();
+
+                TranslateTransition translateTransition1 = new TranslateTransition(Duration.seconds(0.5), menuPane);
+                translateTransition1.setByX(+300);
+                translateTransition1.play();
+                check[0] = false;
+            }
+        });
     }
 }
