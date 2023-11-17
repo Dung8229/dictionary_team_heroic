@@ -14,6 +14,9 @@ import java.util.ResourceBundle;
 
 public class MainBoard implements Initializable {
     @FXML
+    private AnchorPane informationPane;
+    
+    @FXML
     private AnchorPane mainBoard;
     @FXML
     private AnchorPane searchPane;
@@ -51,6 +54,9 @@ public class MainBoard implements Initializable {
     public void OpenUpdatePane() {
         setMainBoard(updatePane);
     }
+    public void OpenInformationPane() {
+        setMainBoard(informationPane);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -73,7 +79,14 @@ public class MainBoard implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        setMainBoard(searchPane);
+
+        try {
+            FXMLLoader loader = new FXMLLoader(MainBoard.class.getResource("/fxml/InformationPane.fxml"));
+            informationPane = loader.load();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        setMainBoard(informationPane);
 
         blendPane.setVisible(false);
 
