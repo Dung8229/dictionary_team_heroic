@@ -2,6 +2,7 @@ package Main;
 
 import General.Dictionary;
 import General.TranslateAPI;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -14,6 +15,8 @@ public class TranslateController extends Dictionary {
     private TextArea inputArea;
     @FXML
     private TextArea outputArea;
+
+    private Thread ThreadTranslate;
 
     @Override
     public void speakUSvoice() {
@@ -34,12 +37,24 @@ public class TranslateController extends Dictionary {
     }
 
     public void translate() throws IOException {
-        if (!Objects.equals(inputArea.getText(), "")) {
-            outputArea.setText(TranslateAPI.translate("en", "vi", inputArea.getText()));
-//            ThreadCreateAudioFileUS = new Thread(new TaskCreateAudioFileUS(inputArea.getText()));
-//            ThreadCreateAudioFileVN = new Thread(new TaskCreateAudioFileVN(outputArea.getText()));
-//            ThreadCreateAudioFileUS.start();
-//            ThreadCreateAudioFileVN.start();
+        ThreadTranslate = new Thread(new TaskTranslate());
+        ThreadTranslate.start();
+    }
+
+    public class TaskTranslate extends Task<Void> {
+        private void translate() throws IOException {
+            if (!Objects.equals(inputArea.getText(), "")) {
+                outputArea.setText(TranslateAPI.translate("en", "vi", inputArea.getText()));
+            }
+        }
+        @Override
+        protected Void call() throws Exception {
+            try {
+                translate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
         }
     }
 }
