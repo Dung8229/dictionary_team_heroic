@@ -7,13 +7,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="app" maxHeight="550.0" maxWidth="800.0" minHeight="550.0" minWidth="800.0" prefHeight="550.0" prefWidth="800.0" stylesheets="/Style/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.MainBoard">
+<AnchorPane id="app" maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" stylesheets="/Style/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.MainBoard">
    <children>
       <AnchorPane id="app1" fx:id="mainBoard" layoutX="55.333333333333336" prefHeight="550.0" prefWidth="800.0" style="-fx-background: #98FB98;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <AnchorPane fx:id="blendPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <AnchorPane id="menuBar" fx:id="menuPane" layoutY="59.0" prefHeight="550.0" prefWidth="117.0" style="-fx-background-color: white;" stylesheets="@../Style/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox layoutY="93.0" prefHeight="290.0" prefWidth="133.0" style="-fx-spacing: 10;" AnchorPane.leftAnchor="0.0">
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#OpenInformationPane" prefHeight="50.0" prefWidth="133.0" style="-fx-background-color: white;" text="  Information" textAlignment="JUSTIFY">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <VBox layoutY="110.0" prefHeight="290.0" prefWidth="133.0" style="-fx-spacing: 38;" AnchorPane.leftAnchor="0.0">
                <children>
                   <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#OpenSearchPane" prefHeight="50.0" prefWidth="254.0" style="-fx-background-color: white;" text="  Search" textAlignment="JUSTIFY">
                      <font>
@@ -85,6 +90,15 @@
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Media/Image/wordMarked.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="addButton" alignment="CENTER" mnemonicParsing="false" onAction="#OpenUpdatePane" prefHeight="50.0" prefWidth="50.0" style="-fx-padding: 0; -fx-background-color: white;">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Media/Image/Update.jpg" />
                            </image>
                         </ImageView>
                      </graphic>

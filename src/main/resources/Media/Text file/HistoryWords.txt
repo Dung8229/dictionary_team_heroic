@@ -1,3 +1,4 @@
+smile
 1 to 1 relationship
 1-byte character code
 2D configuration

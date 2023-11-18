@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchor1" prefHeight="600.0" prefWidth="800.0" stylesheets="@../Style/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.TranslateController">
+<AnchorPane id="anchor3" prefHeight="600.0" prefWidth="800.0" stylesheets="@../Style/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.TranslateController">
    <children>
       <TextArea fx:id="inputArea" layoutX="95.0" layoutY="122.0" prefHeight="131.0" prefWidth="610.0" />
       <TextArea fx:id="outputArea" layoutX="95.0" layoutY="331.0" prefHeight="131.0" prefWidth="610.0" />

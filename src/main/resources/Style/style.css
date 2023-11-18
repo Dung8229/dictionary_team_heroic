@@ -22,11 +22,35 @@
     -fx-padding: 0;
 }
 
+#anchorInfo {
+    -fx-background-image: url('../Media/Image/Information.png');
+    -fx-background-size: 102% 100%;
+}
+
 #anchor1 {
     -fx-background-image: url('../Media/Image/bgr1.jpg');
+    -fx-background-size: 93% 100%;
+}
+
+#anchor2 {
+    -fx-background-image: url('../Media/Image/bgr2.png');
     -fx-background-size: cover;
 }
 
+#anchor3 {
+    -fx-background-image: url('../Media/Image/bgr3.png');
+    -fx-background-size: cover;
+}
+
+#anchor4 {
+    -fx-background-image: url('../Media/Image/bg4.png');
+    -fx-background-size: cover;
+}
+
+#anchor5 {
+    -fx-background-image: url('../Media/Image/bgr5.jpg');
+    -fx-background-size: cover;
+}
 #menuBar {
     -fx-background-image: url('../Media/Image/menuBar.jpg');
     -fx-background-size: cover;
