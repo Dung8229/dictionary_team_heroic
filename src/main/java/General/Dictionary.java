@@ -6,6 +6,9 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
 
 import java.io.*;
+import java.util.Comparator;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -84,13 +87,13 @@ public class Dictionary extends VoiceRSS {
             e.printStackTrace();
         }
         try {
-            BufferedWriter bookmarkWriter = new BufferedWriter(new FileWriter("src/main/resources/Media/Text file/HistoryWords.txt"));
+            BufferedWriter historyWriter = new BufferedWriter(new FileWriter("src/main/resources/Media/Text file/HistoryWords.txt"));
             for (String s : historyList) {
-                bookmarkWriter.write(s);
-                bookmarkWriter.newLine();
+                historyWriter.write(s);
+                historyWriter.newLine();
             }
-            bookmarkWriter.flush();
-            bookmarkWriter.close();
+            historyWriter.flush();
+            historyWriter.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

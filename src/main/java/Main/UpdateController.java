@@ -32,7 +32,7 @@ public class UpdateController extends Dictionary {
         word = searchField.getText();
         if (Objects.equals(word, "")) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Dictionary");
+            alert.setTitle("Greenbook");
             alert.setHeaderText(null);
             alert.setContentText("Bạn chưa điền từ!");
             alert.showAndWait();
@@ -44,7 +44,7 @@ public class UpdateController extends Dictionary {
         }
         if (!wordPattern.matcher(word).find()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Dictionary");
+            alert.setTitle("Greenbook");
             alert.setHeaderText(null);
             alert.setContentText("Từ chỉ chứa các chữ cái, chữ số, dấu cách và gạch ngang!");
             alert.showAndWait();
@@ -67,7 +67,7 @@ public class UpdateController extends Dictionary {
 
     public void saveChanges() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Dictionary");
+        alert.setTitle("Greenbook");
         alert.setHeaderText(null);
         if (!dictionaryList.contains(word)) {
             dictionaryList.add(binarySearch(dictionaryList, word), word);
@@ -83,7 +83,7 @@ public class UpdateController extends Dictionary {
 
     public void removeWord() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Dictionary");
+        alert.setTitle("Greenbook");
         alert.setHeaderText(null);
         alert.setContentText("Xóa \"" + word + "\" khỏi từ điển?");
         alert.showAndWait().ifPresent(response -> {

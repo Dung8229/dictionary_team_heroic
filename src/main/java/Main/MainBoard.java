@@ -13,18 +13,15 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainBoard implements Initializable {
+    private AnchorPane informationPane;
     @FXML
     private AnchorPane mainBoard;
-    @FXML
     private AnchorPane searchPane;
-    @FXML
     private AnchorPane translatePane;
-    @FXML
     private AnchorPane bookmarkPane;
-    @FXML
     private AnchorPane historyPane;
-    @FXML
     private AnchorPane updatePane;
+    private AnchorPane typingGamePane;
 
     @FXML
     private AnchorPane menuPane, blendPane, touchPane;
@@ -51,6 +48,12 @@ public class MainBoard implements Initializable {
     public void OpenUpdatePane() {
         setMainBoard(updatePane);
     }
+    public void OpenInformationPane() {
+        setMainBoard(informationPane);
+    }
+    public void OpenTypingGamePane() {
+        setMainBoard(typingGamePane);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -58,6 +61,7 @@ public class MainBoard implements Initializable {
             searchPane = FXMLLoader.load(MainBoard.class.getResource("/fxml/SearchPane.fxml"));
             translatePane = FXMLLoader.load(MainBoard.class.getResource("/fxml/TranslatePane.fxml"));
             updatePane = FXMLLoader.load(MainBoard.class.getResource("/fxml/UpdatePane.fxml"));
+            typingGamePane = FXMLLoader.load(MainBoard.class.getResource("/fxml/TypingGamePane.fxml"));
         } catch (Exception e) {
             e.printStackTrace();
         }
