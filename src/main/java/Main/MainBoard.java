@@ -13,8 +13,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainBoard implements Initializable {
-    private AnchorPane informationPane;
-    
     @FXML
     private AnchorPane mainBoard;
     private AnchorPane searchPane;
@@ -23,6 +21,7 @@ public class MainBoard implements Initializable {
     private AnchorPane historyPane;
     private AnchorPane updatePane;
     private AnchorPane typingGamePane;
+    private AnchorPane informationPane;
 
     @FXML
     private AnchorPane menuPane, blendPane, touchPane;
