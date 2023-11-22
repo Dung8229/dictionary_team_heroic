@@ -5,18 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bf461ad-7446-47c5-8420-bb18bc10d736" name="Changes" comment="Chỉnh sửa đồ hoạ">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2023_7_18_PM_[Changes]/VoiceUK.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2023_7_18_PM_[Changes]/VoiceUS.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2023_7_18_PM_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/MainBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/MainBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/General/CountdownTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/General/CountdownTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/General/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/General/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/General/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/General/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/General/WordView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/General/WordView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/TypedWordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/TypedWordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/TypingGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/TypingGameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUK.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUK.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUS.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUS.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Image/bgr1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Image/bgr1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Text file/BookmarkWords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/BookmarkWords.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Text file/Details.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/Details.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Text file/HistoryWords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/HistoryWords.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/BookmarkPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/BookmarkPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/HistoryPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/HistoryPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Text file/Words.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/Words.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/MainBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MainBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/TranslatePane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/TranslatePane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/UpdatePane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/UpdatePane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/TypingGamePane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/TypingGamePane.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +33,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -73,8 +80,8 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Back-end&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/ProjectOOP/wordsmith-master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Back-end-temp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/Project/Dictionary/src/main/resources/Media/Text file/Typing Game&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -83,13 +90,16 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\Media\Text file\Typing Game" />
+      <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\fxml" />
       <recent name="C:\Users\Admin\Documents\GitHub\Dictionary-TeamHeroic\src\main\resources\Media\Image" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\Media\Text file\Typing Game" />
+      <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\Media\Audio\TypingGame" />
       <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\Media" />
       <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\Code" />
       <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\com\example\dictionary" />
-      <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="Code" />
@@ -103,7 +113,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main.RunDictionary" />
       <module name="Dictionary" />
-      <option name="VM_PARAMETERS" value="--module-path C:\JavaFX\javafx-sdk-21\lib --add-modules javafx.controls,javafx.fxml,javafx.media,javafx.web" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\Admin\Downloads\App\JavaFX\openjfx-21.0.1_windows-x64_bin-sdk\javafx-sdk-21.0.1\lib --add-modules javafx.controls,javafx.fxml,javafx.media,javafx.web" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

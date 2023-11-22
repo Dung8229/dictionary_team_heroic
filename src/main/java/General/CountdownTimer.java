@@ -13,17 +13,17 @@ import javafx.util.Duration;
 import javax.naming.Binding;
 
 public class CountdownTimer {
-    private double finishTime;
+    private double initTime;
     private double time;
     private DoubleProperty progressProperty = new SimpleDoubleProperty(.0);
     private BooleanProperty isRunningProperty = new SimpleBooleanProperty(false);
     private Timeline timeline;
-    public CountdownTimer(double finishTime) {
-        this.finishTime = finishTime;
-        time = finishTime;
-        timeline = new Timeline(new KeyFrame(Duration.seconds(finishTime / 10), e -> {
-            this.time -= finishTime / 10;
-            progressProperty.set(time * 1.00 / finishTime);
+    public CountdownTimer(double initTime) {
+        this.initTime = initTime;
+        time = initTime;
+        timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
+            this.time -= 0.25;
+            progressProperty.set(time * 1.00 / initTime);
             if (ring()) {
                 timeline.stop();
             }
@@ -44,14 +44,19 @@ public class CountdownTimer {
         return isRunningProperty;
     }
 
-    public void start(double finishTime) {
+    public void start() {
         if (timeline.getStatus() == Animation.Status.STOPPED) {
             timeline.play();
         }
     }
+    
+    public void add(double additionTime) {
+        time += additionTime;
+        if (time > initTime) time = initTime;
+    }
 
-    public void reset(double finishTime) {
-        this.finishTime = finishTime;
-        time = finishTime;
+    public void reset(double initTime) {
+        this.initTime = initTime;
+        time = initTime;
     }
 }

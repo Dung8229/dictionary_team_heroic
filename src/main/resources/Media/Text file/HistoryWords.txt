@@ -1,3 +1,6 @@
+oop
+8-bit character
+3D (three dimension) calculation
 a posteriori
 aard-wolf
 7-bit ASCII code set
@@ -12,8 +15,6 @@ smile
 3D (three dimension)
 1-byte character string
 7-bit ASCII code
-8-bit character
-3D (three dimension) calculation
 1 to many relationship
 2D module = two-dimensional module
 3D (three dimension) configuration

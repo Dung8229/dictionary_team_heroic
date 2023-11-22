@@ -38,14 +38,15 @@ public class WordView extends HBox {
         this.correctedLetter = correctedLetter;
     }
 
-    public void handleKeyEvent(char letter) {
+    public boolean handleKeyEvent(char letter) {
         if (letter == letters[correctedLetter]) {
             Text t = (Text) getChildren().get(correctedLetter);
             t.setFill(Color.GREEN);
             correctedLetter++;
         } else {
-            //do st
+            return false;
         }
+        return true;
     }
 
     public boolean isFinished() {

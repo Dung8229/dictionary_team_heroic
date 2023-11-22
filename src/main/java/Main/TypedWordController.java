@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.web.WebView;
 
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -28,17 +29,30 @@ public class TypedWordController extends Dictionary implements Initializable {
     private Button USbutton;
     @FXML
     private Button UKbutton;
+
     private ObservableList<String> typedWordList = FXCollections.observableArrayList();
+
     public void bookmarkWord() {
         bookmarkWord(listView, bookmarkCheckBox);
     }
 
-    public void add(String word) {
-        typedWordList.add(word.toLowerCase());
-    }
-
     public void initWordList() {
-        initWordList(typedWordList, listView);
+        typedWordList.clear();
+        try {
+            BufferedReader typingGameReader = new BufferedReader(new FileReader("src/main/resources/Media/Text file/Typing Game/TypingGameWords.txt"));
+            String word = typingGameReader.readLine();
+            while (word != null) {
+                if (word.charAt(0) == '0') {
+                    typedWordList.add(hiddenWordLengthOf(word.length() - 1));
+                } else {
+                    typedWordList.add(word.substring(1).toLowerCase());
+                }
+                word = typingGameReader.readLine();
+            }
+            initWordList(typedWordList, listView);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -64,6 +78,7 @@ public class TypedWordController extends Dictionary implements Initializable {
                     ThreadCreateAudioFileUS.start();
                     ThreadCreateAudioFileUK.start();
                     webView.getEngine().loadContent(getDetail(word), "text/html");
+                    addHistoryList(word);
                     handleBookmarkCheckBoxSelected(bookmarkCheckBox, word);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -74,5 +89,13 @@ public class TypedWordController extends Dictionary implements Initializable {
 
             }
         });
+    }
+
+    private String hiddenWordLengthOf(int l) {
+        String s = "";
+        for (int i = 0; i < l; i++) {
+            s += "*";
+        }
+        return s;
     }
 }

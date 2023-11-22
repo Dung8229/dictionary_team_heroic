@@ -76,6 +76,28 @@ public class Dictionary extends VoiceRSS {
 
     public static void saveSettingToFile() {
         try {
+            BufferedWriter searchWriter = new BufferedWriter(new FileWriter("src/main/resources/Media/Text file/Words.txt"));
+            for (String s : dictionaryList) {
+                searchWriter.write(s);
+                searchWriter.newLine();
+            }
+            searchWriter.flush();
+            searchWriter.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            BufferedWriter detailWriter = new BufferedWriter(new FileWriter("src/main/resources/Media/Text file/Details.txt"));
+            for (String s : detailList) {
+                detailWriter.write(s);
+                detailWriter.newLine();
+            }
+            detailWriter.flush();
+            detailWriter.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
             BufferedWriter bookmarkWriter = new BufferedWriter(new FileWriter("src/main/resources/Media/Text file/BookmarkWords.txt"));
             for (String s : bookmarkedList) {
                 bookmarkWriter.write(s);

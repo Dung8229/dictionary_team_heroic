@@ -4,18 +4,18 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 public abstract class Game {
-    MediaPlayer mediaPlayer = null;
+    private MediaPlayer mediaPlayer = null;
 
     public abstract void init();
     public abstract void handleStartButton();
     public abstract void handlePauseButton();
     public abstract void handleQuitButton();
 
-    void setBackgroundMusic(Media backgroundMusic) {
-        MediaPlayer mediaPlayer= new MediaPlayer(backgroundMusic);
+    protected void setBackgroundMusic(Media backgroundMusic) {
+        mediaPlayer = new MediaPlayer(backgroundMusic);
     }
 
-    void playBackgroundMusic(boolean isLoop) {
+    protected void playBackgroundMusic(boolean isLoop) {
         if (isLoop) {
             mediaPlayer.setCycleCount(-1);
         } else {
@@ -24,15 +24,15 @@ public abstract class Game {
         mediaPlayer.play();
     }
 
-    void pauseBackgroundMusic() {
+    protected void pauseBackgroundMusic() {
         mediaPlayer.pause();
     }
 
-    void unpauseBackgroundMusic() {
+    protected void unpauseBackgroundMusic() {
         mediaPlayer.play();
     }
 
-    void stopBackgroundMusic() {
+    protected void stopBackgroundMusic() {
         mediaPlayer.stop();
     }
 }
