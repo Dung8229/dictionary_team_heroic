@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bf461ad-7446-47c5-8420-bb18bc10d736" name="Changes" comment="Chỉnh sửa đồ hoạ">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2023_7_18_PM_[Changes]/VoiceUK.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2023_7_18_PM_[Changes]/VoiceUS.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2023_7_18_PM_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/General/CountdownTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/General/CountdownTimer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/General/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/General/Dictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/General/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/General/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/General/WordView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/General/WordView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/TypedWordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/TypedWordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/TypingGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/TypingGameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUK.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUK.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUS.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUS.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Text file/BookmarkWords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/BookmarkWords.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Text file/Details.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/Details.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Text file/HistoryWords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/HistoryWords.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Text file/Words.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/Words.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/MainBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MainBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/TypingGamePane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/TypingGamePane.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
