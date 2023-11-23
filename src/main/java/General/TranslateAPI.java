@@ -7,9 +7,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
+//https://stackoverflow.com/questions/8147284/how-to-use-google-translate-api-in-my-java-application
+
 public class TranslateAPI {
     public static String translate(String langFrom, String langTo, String text) throws IOException {
-        // INSERT YOU URL HERE
         String urlStr = "https://script.google.com/macros/s/AKfycbw5srGmKagHGOkeQn5fw4OO_JGTSqTXzBelGw6k239rbq7XT9IlJtxzJMlZiim3vHQJjg/exec" +
                 "?q=" + URLEncoder.encode(text, "UTF-8") +
                 "&target=" + langTo +

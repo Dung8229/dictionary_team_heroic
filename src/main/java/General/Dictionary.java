@@ -6,8 +6,16 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
 
 import java.io.*;
+import java.util.Comparator;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 public class Dictionary extends VoiceRSS {
     protected static ObservableList<String> dictionaryList = FXCollections.observableArrayList();
@@ -18,7 +26,7 @@ public class Dictionary extends VoiceRSS {
 
     public String getDetail(String word) {
         int idx = dictionaryList.indexOf(word);
-        if (idx >= 0) return detailList.get(idx);
+        if (idx >= 0) return formatHtml(detailList.get(idx));
         throw new RuntimeException();
     }
 
@@ -68,6 +76,28 @@ public class Dictionary extends VoiceRSS {
 
     public static void saveSettingToFile() {
         try {
+            BufferedWriter searchWriter = new BufferedWriter(new FileWriter("src/main/resources/Media/Text file/Words.txt"));
+            for (String s : dictionaryList) {
+                searchWriter.write(s);
+                searchWriter.newLine();
+            }
+            searchWriter.flush();
+            searchWriter.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            BufferedWriter detailWriter = new BufferedWriter(new FileWriter("src/main/resources/Media/Text file/Details.txt"));
+            for (String s : detailList) {
+                detailWriter.write(s);
+                detailWriter.newLine();
+            }
+            detailWriter.flush();
+            detailWriter.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
             BufferedWriter bookmarkWriter = new BufferedWriter(new FileWriter("src/main/resources/Media/Text file/BookmarkWords.txt"));
             for (String s : bookmarkedList) {
                 bookmarkWriter.write(s);
@@ -79,13 +109,13 @@ public class Dictionary extends VoiceRSS {
             e.printStackTrace();
         }
         try {
-            BufferedWriter bookmarkWriter = new BufferedWriter(new FileWriter("src/main/resources/Media/Text file/HistoryWords.txt"));
+            BufferedWriter historyWriter = new BufferedWriter(new FileWriter("src/main/resources/Media/Text file/HistoryWords.txt"));
             for (String s : historyList) {
-                bookmarkWriter.write(s);
-                bookmarkWriter.newLine();
+                historyWriter.write(s);
+                historyWriter.newLine();
             }
-            bookmarkWriter.flush();
-            bookmarkWriter.close();
+            historyWriter.flush();
+            historyWriter.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -132,6 +162,19 @@ public class Dictionary extends VoiceRSS {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static String formatHtml(String inputHtml) {
+        String formattedHtml = inputHtml.replaceAll("@(.*?)<br />", "<h1 style=\"color: red;\">$1</h1>")
+                .replaceAll("\\*(.*?)<br />", "<h2 style=\"color: blue;\">$1</h2>")
+                .replaceAll("- (.*?)<br />", "<p style=\"color: black;\">$1</p>")
+                .replaceAll("=([^=]*?)<br />", "<p style=\"color: purple;\">$1</p>")
+                .replaceAll("\\+", ":")
+                .replaceAll("<br />", "<br /><br />")
+                .replaceAll("<Q>", "")
+                .replaceAll("</Q>", "");
+
+        return formattedHtml;
     }
 
     public Dictionary() {

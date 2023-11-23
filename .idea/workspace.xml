@@ -73,8 +73,8 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Back-end&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/ProjectOOP/wordsmith-master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Back-end-temp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/Project/Dictionary/src/main/resources/Media/Text file/Typing Game&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -83,13 +83,16 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\Media\Text file\Typing Game" />
+      <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\fxml" />
       <recent name="C:\Users\Admin\Documents\GitHub\Dictionary-TeamHeroic\src\main\resources\Media\Image" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\Media\Text file\Typing Game" />
+      <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\Media\Audio\TypingGame" />
       <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\Media" />
       <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\Code" />
       <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources\com\example\dictionary" />
-      <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="Main" />
@@ -104,7 +107,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main.RunDictionary" />
       <module name="Dictionary" />
-      <option name="VM_PARAMETERS" value="--module-path C:\JavaFX\javafx-sdk-21\lib --add-modules javafx.controls,javafx.fxml,javafx.media,javafx.web" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\Admin\Downloads\App\JavaFX\openjfx-21.0.1_windows-x64_bin-sdk\javafx-sdk-21.0.1\lib --add-modules javafx.controls,javafx.fxml,javafx.media,javafx.web" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

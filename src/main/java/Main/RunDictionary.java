@@ -47,5 +47,4 @@ public class RunDictionary extends Application {
         launch();
     }
 
-
 }

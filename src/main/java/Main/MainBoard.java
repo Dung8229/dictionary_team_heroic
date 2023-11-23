@@ -14,24 +14,19 @@ import java.util.ResourceBundle;
 
 public class MainBoard implements Initializable {
     @FXML
-    private AnchorPane informationPane;
-    
-    @FXML
     private AnchorPane mainBoard;
-    @FXML
     private AnchorPane searchPane;
-    @FXML
     private AnchorPane translatePane;
-    @FXML
     private AnchorPane bookmarkPane;
-    @FXML
     private AnchorPane historyPane;
-    @FXML
     private AnchorPane updatePane;
     @FXML
     private AnchorPane gameMenu;
     @FXML
     private AnchorPane questionMain;
+    private AnchorPane typingGamePane;
+    private AnchorPane informationPane;
+    
     @FXML
     private AnchorPane menuPane, blendPane, touchPane;
     @FXML
@@ -59,15 +54,22 @@ public class MainBoard implements Initializable {
     public void OpenInformationPane() {
         setMainBoard(informationPane);
     }
+
     public void OpenQuestionMain() {
         setMainBoard(questionMain);
     }
+
+    public void OpenTypingGamePane() {
+        setMainBoard(typingGamePane);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             searchPane = FXMLLoader.load(MainBoard.class.getResource("/fxml/SearchPane.fxml"));
             translatePane = FXMLLoader.load(MainBoard.class.getResource("/fxml/TranslatePane.fxml"));
             updatePane = FXMLLoader.load(MainBoard.class.getResource("/fxml/UpdatePane.fxml"));
+            typingGamePane = FXMLLoader.load(MainBoard.class.getResource("/fxml/TypingGamePane.fxml"));
         } catch (Exception e) {
             e.printStackTrace();
         }

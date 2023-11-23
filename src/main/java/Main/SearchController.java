@@ -68,13 +68,4 @@ public class SearchController extends Dictionary implements Initializable {
             }
         });
     }
-
-//    private String Reformat(String word, String htmlText) {
-//        htmlText = htmlText.replaceAll("<[Q|/Q]>", "");
-//        Pattern pattern = Pattern.compile("@[^(<br />)]*[<br />]");
-//        Matcher matcher = pattern.matcher(htmlText);
-//        htmlText = matcher.replaceAll("@" + word + "<br />");
-//        plainText = plainText.replaceAll("@[^(<br />)]*[<br />]", "hihi<br />");
-//        return htmlText;
-//    }
 }
