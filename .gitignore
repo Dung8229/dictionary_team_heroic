@@ -36,7 +36,5 @@ build/
 
 ### Mac OS ###
 .DS_Store
-*.txt
 *.wav
-*.txt
 .idea/workspace.xml
