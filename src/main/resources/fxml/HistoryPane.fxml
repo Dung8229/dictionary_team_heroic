@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane id="anchor2" prefHeight="550.0" stylesheets="@../Style/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.HistoryController">
+<AnchorPane id="anchor2" prefHeight="600.0" prefWidth="750.0" stylesheets="@../Style/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.HistoryController">
     <children>
         <AnchorPane fx:id="wordListPane" minWidth="-Infinity" prefHeight="550.0" prefWidth="200.0" AnchorPane.bottomAnchor="52.66666666666663" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="602.0" AnchorPane.topAnchor="0.0">
             <children>

@@ -28,10 +28,14 @@ public class MainBoard implements Initializable {
     private AnchorPane historyPane;
     @FXML
     private AnchorPane updatePane;
-
+    @FXML
+    private AnchorPane questionManage;
+    @FXML
+    private AnchorPane questionMain;
+    @FXML
+    private AnchorPane questionPractice;
     @FXML
     private AnchorPane menuPane, blendPane, touchPane;
-
     @FXML
     private Button menu, searchButton, translateButton, savedListButton;
 
@@ -57,7 +61,9 @@ public class MainBoard implements Initializable {
     public void OpenInformationPane() {
         setMainBoard(informationPane);
     }
-
+    public void OpenQuestionMain() {
+        setMainBoard(questionMain);
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -67,12 +73,14 @@ public class MainBoard implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         try {
             FXMLLoader loader = new FXMLLoader(MainBoard.class.getResource("/fxml/BookmarkPane.fxml"));
             bookmarkPane = loader.load();
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         try {
             FXMLLoader loader = new FXMLLoader(MainBoard.class.getResource("/fxml/HistoryPane.fxml"));
             historyPane = loader.load();
@@ -86,6 +94,28 @@ public class MainBoard implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        try {
+            FXMLLoader loader= new FXMLLoader(MainBoard.class.getResource("/fxml/QuestionMain.fxml"));
+            questionMain = loader.load();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            FXMLLoader loader= new FXMLLoader(MainBoard.class.getResource("/fxml/QuestionManage.fxml"));
+            questionManage = loader.load();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            FXMLLoader loader= new FXMLLoader(MainBoard.class.getResource("/fxml/QuestionPractice.fxml"));
+            questionPractice = loader.load();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         setMainBoard(informationPane);
 
         blendPane.setVisible(false);
@@ -160,4 +190,5 @@ public class MainBoard implements Initializable {
             }
         });
     }
+
 }

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.web.HTMLEditor?>
 
-<AnchorPane id="anchor5" prefHeight="600.0" prefWidth="800.0" stylesheets="@../Style/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.UpdateController">
+<AnchorPane id="anchor5" prefHeight="600.0" prefWidth="750.0" stylesheets="@../Style/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.UpdateController">
    <children>
       <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="109.0" layoutY="127.0" prefHeight="375.0" prefWidth="582.0" />
       <TextField fx:id="searchField" layoutX="109.0" layoutY="91.0" prefHeight="25.0" prefWidth="206.0" />

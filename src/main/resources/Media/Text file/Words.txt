@@ -52172,7 +52172,7 @@ game-fowl
 game-house
 game-laws
 game reserve
-Game theory
+QuizQuestion theory
 game theory
 game-warden
 gamed

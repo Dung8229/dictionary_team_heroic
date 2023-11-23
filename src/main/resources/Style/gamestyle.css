@@ -1,0 +1,37 @@
+* {
+    -fx-font-family: Tahoma;
+    -fx-font-size: 14;}
+
+VBox {
+    -fx-background-color: black;
+    -fx-padding: 10;
+}
+
+.Practice {
+    -fx-alignment: TOP_LEFT;
+}
+
+HBox, VBox {
+    -fx-spacing: 10;
+    -fx-alignment: CENTER;
+}
+
+HBox.Choice {
+    -fx-alignment: CENTER_LEFT;
+}
+
+Text.Subject {
+    -fx-font-size: 40;
+    -fx-font-weight: bold;
+    -fx-fill: gold;
+    -fx-stroke: red;
+    -fx-stroke-width: 2;
+}
+
+RadioButton {
+    -fx-text-fill: white;
+}
+
+.Controls {
+    -fx-pref-tile-height: 50;
+}

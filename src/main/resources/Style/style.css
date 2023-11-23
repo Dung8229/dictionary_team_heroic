@@ -24,7 +24,7 @@
 
 #anchorInfo {
     -fx-background-image: url('../Media/Image/Information.png');
-    -fx-background-size: 102% 100%;
+    -fx-background-size: 109% 100%;
 }
 
 #anchor1 {
@@ -55,3 +55,4 @@
     -fx-background-image: url('../Media/Image/menuBar.jpg');
     -fx-background-size: cover;
 }
+

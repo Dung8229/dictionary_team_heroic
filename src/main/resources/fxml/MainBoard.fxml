@@ -9,7 +9,7 @@
 
 <AnchorPane id="app" maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" stylesheets="/Style/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.MainBoard">
    <children>
-      <AnchorPane id="app1" fx:id="mainBoard" layoutX="55.333333333333336" prefHeight="550.0" prefWidth="800.0" style="-fx-background: #98FB98;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane id="app1" fx:id="mainBoard" layoutX="55.333333333333336" prefHeight="600.0" prefWidth="750.0" style="-fx-background: #98FB98;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <AnchorPane fx:id="blendPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <AnchorPane id="menuBar" fx:id="menuPane" layoutY="59.0" prefHeight="550.0" prefWidth="117.0" style="-fx-background-color: white;" stylesheets="@../Style/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -45,7 +45,7 @@
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="61.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="216.0" style="-fx-background-color: white;" text="  Game" textAlignment="JUSTIFY">
+                  <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="61.0" mnemonicParsing="false" onAction="#OpenQuestionMain" prefHeight="50.0" prefWidth="216.0" style="-fx-background-color: white;" text="  Quiz Question" textAlignment="JUSTIFY">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -103,7 +103,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" style="-fx-padding: 0;">
+                  <Button mnemonicParsing="false" onAction="#OpenQuestionMain" style="-fx-padding: 0;">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>

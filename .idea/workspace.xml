@@ -4,17 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bf461ad-7446-47c5-8420-bb18bc10d736" name="Changes" comment="Chỉnh sửa đồ hoạ">
+    <list default="true" id="4bf461ad-7446-47c5-8420-bb18bc10d736" name="Changes" comment="add quiz game about question">
+      <change afterPath="$PROJECT_DIR$/src/main/java/General/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/QuizQuestion/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/QuizQuestion/Choice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/QuizQuestion/JdbcUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/QuizQuestion/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/QuizQuestion/QuestionMainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/QuizQuestion/QuestionManageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/QuizQuestion/QuestionPracticeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/QuizQuestion/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Media/Image/Practice.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Media/Image/Setting.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Style/gamestyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/QuestionMain.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/QuestionManage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/QuestionPractice.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2023_7_18_PM_[Changes]/VoiceUK.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2023_7_18_PM_[Changes]/VoiceUS.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2023_7_18_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2023_7_18_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/MainBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/MainBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUK.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUK.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUS.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Audio/VoiceUS.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Image/bgr1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Image/bgr1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Text file/HistoryWords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/HistoryWords.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/RunDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/RunDictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Media/Text file/Words.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Media/Text file/Words.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/BookmarkPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/BookmarkPane.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/HistoryPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/HistoryPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/InformationPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/InformationPane.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/MainBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MainBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/SearchPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/SearchPane.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/TranslatePane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/TranslatePane.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/UpdatePane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/UpdatePane.fxml" afterDir="false" />
     </list>
@@ -26,8 +45,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
+        <option value="JavaFXApplication" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -92,6 +112,7 @@
       <recent name="C:\Users\Admin\Desktop\Project\Dictionary\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Main" />
       <recent name="Code" />
       <recent name="com.example.dictionary" />
       <recent name="" />
@@ -139,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699953587913</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="chỉnh sửa đồ hoạ lần 2">
+      <option name="closed" value="true" />
+      <created>1700207230100</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700207230100</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,7 +197,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge pull request #7 from Dung8229/Back-end-temp&#10;&#10;Back end temp" />
     <MESSAGE value="Chỉnh sửa đồ hoạ" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chỉnh sửa đồ hoạ" />
+    <MESSAGE value="chỉnh sửa đồ hoạ lần 2" />
+    <MESSAGE value="add quiz game about question" />
+    <option name="LAST_COMMIT_MESSAGE" value="add quiz game about question" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
