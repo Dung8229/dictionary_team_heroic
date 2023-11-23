@@ -1,10 +1,21 @@
 * {
     -fx-font-family: Tahoma;
-    -fx-font-size: 14;}
+    -fx-font-size: 14;
+}
 
-VBox {
-    -fx-background-color: black;
-    -fx-padding: 10;
+#main {
+    -fx-background-image: url('../Media/Image/question0.jpg');
+    -fx-background-size: 93% 100%;
+}
+
+#practice {
+    -fx-background-image: url('../Media/Image/question1.jpg');
+    -fx-background-size: 93% 100%;
+}
+
+#manage {
+    -fx-background-image: url('../Media/Image/question2.jpg');
+    -fx-background-size: 90% 100%;
 }
 
 .Practice {
@@ -23,12 +34,12 @@ HBox.Choice {
 Text.Subject {
     -fx-font-size: 40;
     -fx-font-weight: bold;
-    -fx-fill: gold;
-    -fx-stroke: red;
+    -fx-fill:red;
+    -fx-stroke: green;
     -fx-stroke-width: 2;
 }
 
-RadioButton {
+RadioButton, Label {
     -fx-text-fill: white;
 }
 

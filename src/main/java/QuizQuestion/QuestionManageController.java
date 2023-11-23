@@ -71,6 +71,19 @@ public class QuestionManageController implements Initializable {
             System.err.println(e.getMessage());
         }
 
+        //search question by content
+        this.txtKeywords.textProperty().addListener(et -> {
+            this.tbQuestion.getItems().clear();
+            try {
+                this.tbQuestion.setItems(
+                        FXCollections.observableArrayList(Utils.getQuestions(
+                                this.txtKeywords.getText())));
+            } catch (SQLException e) {
+                System.err.println(e.getMessage());
+            }
+
+        });
+
         //select row on TableView
         this.tbQuestion.setRowFactory(et -> {
             TableRow row = new TableRow();

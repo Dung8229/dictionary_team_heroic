@@ -12,9 +12,9 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="QuizQuestion.QuestionManageController">
    <children>
-      <VBox fx:id="vbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" stylesheets="@../Style/gamestyle.css">
+      <VBox id="manage" fx:id="vbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" stylesheets="@../Style/gamestyle.css" AnchorPane.topAnchor="0.0">
          <children>
-            <TextField fx:id="txtContent" promptText="Question content.." />
+            <TextField fx:id="txtContent" prefHeight="27.0" prefWidth="681.0" promptText="Question content.." />
             <ComboBox fx:id="cbCategories" prefWidth="150.0" promptText="Category.." />
             <HBox prefHeight="40.0" prefWidth="600.0" styleClass="Choice">
                <children>
@@ -51,7 +51,7 @@
                </children>
             </HBox>
             <TextField fx:id="txtKeywords" prefHeight="27.0" prefWidth="710.0" promptText="Enter keywords...." styleClass="Controls" />
-            <TableView fx:id="tbQuestion" prefHeight="200.0" prefWidth="200.0" />
+            <TableView fx:id="tbQuestion" prefHeight="181.0" prefWidth="750.0" />
          </children>
       </VBox>
    </children>

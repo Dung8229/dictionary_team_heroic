@@ -11,6 +11,24 @@
    <children>
       <AnchorPane id="app1" fx:id="mainBoard" layoutX="55.333333333333336" prefHeight="600.0" prefWidth="750.0" style="-fx-background: #98FB98;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <AnchorPane fx:id="blendPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="gameMenu" prefHeight="97.0" prefWidth="133.0" AnchorPane.bottomAnchor="116.0" AnchorPane.leftAnchor="183.0">
+         <children>
+            <VBox prefHeight="109.0" prefWidth="133.0">
+               <children>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="254.0" style="-fx-background-color: white;" text="  Press Game" textAlignment="JUSTIFY">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#OpenQuestionMain" prefHeight="50.0" prefWidth="254.0" style="-fx-background-color: white;" text="  Quiz Question" textAlignment="JUSTIFY">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
       <AnchorPane id="menuBar" fx:id="menuPane" layoutY="59.0" prefHeight="550.0" prefWidth="117.0" style="-fx-background-color: white;" stylesheets="@../Style/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0">
          <children>
             <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#OpenInformationPane" prefHeight="50.0" prefWidth="133.0" style="-fx-background-color: white;" text="  Information" textAlignment="JUSTIFY">
@@ -45,7 +63,7 @@
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="61.0" mnemonicParsing="false" onAction="#OpenQuestionMain" prefHeight="50.0" prefWidth="216.0" style="-fx-background-color: white;" text="  Quiz Question" textAlignment="JUSTIFY">
+                  <Button fx:id="gameButton" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="61.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="216.0" style="-fx-background-color: white;" text="  Game" textAlignment="JUSTIFY">
                      <font>
                         <Font size="15.0" />
                      </font>

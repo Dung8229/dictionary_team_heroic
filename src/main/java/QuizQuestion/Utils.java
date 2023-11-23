@@ -37,10 +37,13 @@ public class Utils {
         }
         return c;
     }
-
-    public static List<Question> getQuestions(String keyword) throws SQLException {
+    public static List<Question> getQuestions(String keyword, int numQuestion) throws SQLException {
         String sql = "SELECT * FROM question";
-        if (!keyword.isEmpty()) sql += "WHERE content LIKE ?";
+
+        if (!keyword.isEmpty())
+            sql += "WHERE content like ?";
+        if (numQuestion > 0)
+            sql += " ORDER BY rand() LIMIT " + numQuestion;
 
         Connection conn = JdbcUtils.getConnection();
         PreparedStatement stm = conn.prepareStatement(sql);
@@ -59,6 +62,11 @@ public class Utils {
             questions.add(q);
         }
         return questions;
+
+    }
+
+    public static List<Question> getQuestions(String keyword) throws SQLException {
+        return getQuestions(keyword, 10);
     }
 
     public static List<Choice> getChoicesByQuestion(String questionId) throws SQLException {

@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -21,6 +22,34 @@ public class QuestionMainController implements Initializable {
     @FXML
     private Label label;
     @FXML
+    private Button quitButton;
+    @FXML
+    private AnchorPane mainBoard;
+    @FXML
+    private AnchorPane questionPractice;
+    @FXML
+    private AnchorPane questionManage;
+    public void setMainBoard(AnchorPane pane) {
+        mainBoard.getChildren().setAll(pane);
+    }
+    public void OpenQuestionMain() {
+        mainBoard.setDisable(true);
+        mainBoard.setVisible(false);
+    }
+    public void OpenQuestionManage() {
+        mainBoard.setDisable(false);
+        mainBoard.setVisible(true);
+        questionManage.getChildren().addAll(quitButton);
+        setMainBoard(questionManage);
+
+    }
+    public void OpenQuestionPractice() {
+        mainBoard.setDisable(false);
+        mainBoard.setVisible(true);
+        questionPractice.getChildren().addAll(quitButton);
+        setMainBoard(questionPractice);
+    }
+    @FXML
     private void handleButtonAction(ActionEvent event) {
         System.out.println("Click me!");
         label.setText("Hehee");
@@ -28,36 +57,20 @@ public class QuestionMainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
-
-    public void practiceHandler(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(QuestionMainController.class.getResource("/fxml/QuestionPractice.fxml"));
-        Parent root = loader.load();
-
-        QuestionPracticeController controller = loader.getController();
-        TextInputDialog inp = new TextInputDialog();
-        inp.setHeaderText("The number of questions to practice");
-        Optional<String> num = inp.showAndWait();
-        if (num.isPresent()) {
-            controller.setNumOfQuestion(Integer.parseInt(num.get()));
-            controller.loadQuestion();
-            Scene scene = new Scene(root);
-
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
+        try {
+            FXMLLoader loader= new FXMLLoader(MainBoard.class.getResource("/fxml/QuestionManage.fxml"));
+            questionManage = loader.load();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
+        try {
+            FXMLLoader loader= new FXMLLoader(MainBoard.class.getResource("/fxml/QuestionPractice.fxml"));
+            questionPractice = loader.load();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        mainBoard.setDisable(true);
     }
-
-    public void manageHandler(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(QuestionMainController.class.getResource("/fxml/QuestionManage.fxml"));
-
-        Scene scene = new Scene(root);
-
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-    }
-
 }

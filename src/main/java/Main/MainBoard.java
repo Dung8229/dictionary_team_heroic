@@ -29,15 +29,13 @@ public class MainBoard implements Initializable {
     @FXML
     private AnchorPane updatePane;
     @FXML
-    private AnchorPane questionManage;
+    private AnchorPane gameMenu;
     @FXML
     private AnchorPane questionMain;
     @FXML
-    private AnchorPane questionPractice;
-    @FXML
     private AnchorPane menuPane, blendPane, touchPane;
     @FXML
-    private Button menu, searchButton, translateButton, savedListButton;
+    private Button menu, gameButton;
 
     public void setMainBoard(AnchorPane pane) {
         mainBoard.getChildren().setAll(pane);
@@ -102,20 +100,6 @@ public class MainBoard implements Initializable {
             e.printStackTrace();
         }
 
-        try {
-            FXMLLoader loader= new FXMLLoader(MainBoard.class.getResource("/fxml/QuestionManage.fxml"));
-            questionManage = loader.load();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        try {
-            FXMLLoader loader= new FXMLLoader(MainBoard.class.getResource("/fxml/QuestionPractice.fxml"));
-            questionPractice = loader.load();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
         setMainBoard(informationPane);
 
         blendPane.setVisible(false);
@@ -129,7 +113,13 @@ public class MainBoard implements Initializable {
         translateTransition.setByX(-300);
         translateTransition.play();
 
+        TranslateTransition translateTransition1 = new TranslateTransition(Duration.seconds(0.5), gameMenu);
+        translateTransition1.setByX(-500);
+        translateTransition1.play();
+
         final boolean[] check = {true};
+        final boolean[] checkgame = {true};
+
         menu.setOnMouseClicked(event -> {
             if (check[0]) {
                 blendPane.setVisible(true);
@@ -138,9 +128,9 @@ public class MainBoard implements Initializable {
                 fadeTransition1.setToValue(0.15);
                 fadeTransition1.play();
 
-                TranslateTransition translateTransition1 = new TranslateTransition(Duration.seconds(0.5), menuPane);
-                translateTransition1.setByX(+300);
-                translateTransition1.play();
+                TranslateTransition translateTransition3 = new TranslateTransition(Duration.seconds(0.5), menuPane);
+                translateTransition3.setByX(+300);
+                translateTransition3.play();
                 check[0] = false;
             } else {
                 FadeTransition fadeTransition1 = new FadeTransition(Duration.seconds(0.5), blendPane);
@@ -152,9 +142,9 @@ public class MainBoard implements Initializable {
                     blendPane.setVisible(false);
                 });
 
-                TranslateTransition translateTransition1 = new TranslateTransition(Duration.seconds(0.5), menuPane);
-                translateTransition1.setByX(-300);
-                translateTransition1.play();
+                TranslateTransition translateTransition4 = new TranslateTransition(Duration.seconds(0.5), menuPane);
+                translateTransition4.setByX(-300);
+                translateTransition4.play();
                 check[0] = true;
             }
         });
@@ -169,10 +159,15 @@ public class MainBoard implements Initializable {
                 blendPane.setVisible(false);
             });
 
-            TranslateTransition translateTransition1 = new TranslateTransition(Duration.seconds(0.5), menuPane);
-            translateTransition1.setByX(-300);
-            translateTransition1.play();
+            TranslateTransition translateTransition5 = new TranslateTransition(Duration.seconds(0.5), menuPane);
+            translateTransition5.setByX(-300);
+            translateTransition5.play();
             check[0] = true;
+
+            TranslateTransition translateTransition2 = new TranslateTransition(Duration.seconds(0.5), gameMenu);
+            translateTransition2.setByX(-500);
+            translateTransition2.play();
+            checkgame[0] = true;
         });
 
         touchPane.setOnMouseEntered(event -> {
@@ -183,12 +178,23 @@ public class MainBoard implements Initializable {
                 fadeTransition1.setToValue(0.15);
                 fadeTransition1.play();
 
-                TranslateTransition translateTransition1 = new TranslateTransition(Duration.seconds(0.5), menuPane);
-                translateTransition1.setByX(+300);
-                translateTransition1.play();
+                TranslateTransition translateTransition6 = new TranslateTransition(Duration.seconds(0.5), menuPane);
+                translateTransition6.setByX(+300);
+                translateTransition6.play();
                 check[0] = false;
             }
         });
+
+        gameButton.setOnMouseEntered(event -> {
+            if (!check[0] && checkgame[0]) {
+                TranslateTransition translateTransition7 = new TranslateTransition(Duration.seconds(0.5), gameMenu);
+                translateTransition7.setByX(+500);
+                translateTransition7.play();
+                check[0] = false;
+                checkgame[0] =false;
+            }
+        });
+
     }
 
 }

@@ -3,24 +3,27 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="QuizQuestion.QuestionPracticeController">
    <children>
-      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="Practice" stylesheets="@../Style/gamestyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox id="practice" prefHeight="200.0" prefWidth="100.0" stylesheets="@../Style/gamestyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label fx:id="lblContent" text="Label" />
-            <RadioButton fx:id="rdoA" mnemonicParsing="false" text="RadioButton" />
-            <RadioButton fx:id="rdoB" layoutX="20.0" layoutY="48.0" mnemonicParsing="false" text="RadioButton" />
-            <RadioButton fx:id="rdoC" layoutX="20.0" layoutY="77.0" mnemonicParsing="false" text="RadioButton" />
-            <RadioButton fx:id="rdoD" layoutX="20.0" layoutY="77.0" mnemonicParsing="false" text="RadioButton" />
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <RadioButton fx:id="rdoA" mnemonicParsing="false" text="RadioButton">
+               <toggleGroup>
+                  <ToggleGroup fx:id="choices" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="rdoB" layoutX="20.0" layoutY="48.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$choices" />
+            <RadioButton fx:id="rdoC" layoutX="20.0" layoutY="77.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$choices" />
+            <RadioButton fx:id="rdoD" layoutX="20.0" layoutY="77.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$choices" />
+            <HBox prefHeight="43.0" prefWidth="750.0">
                <children>
-                  <Button mnemonicParsing="false" text="Check Your Answer" />
-                  <Button layoutX="345.0" layoutY="47.0" mnemonicParsing="false" text="Next Question" />
+                  <Button mnemonicParsing="false" onAction="#checkAnswerHandler" text="Check Your Answer" />
+                  <Button fx:id="btnNext" layoutX="345.0" layoutY="47.0" mnemonicParsing="false" onAction="#nextHandler" text="Next Question" />
                </children>
             </HBox>
          </children>
